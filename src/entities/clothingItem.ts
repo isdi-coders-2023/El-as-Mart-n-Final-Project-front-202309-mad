@@ -1,5 +1,5 @@
-import { ImgData } from '../types/img.data.ts';
-import { User } from './user.ts';
+import { ImgData } from '../types/img.data';
+import { User } from './user';
 
 export type ClothingItem = {
   id: string;
