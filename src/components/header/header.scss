@@ -5,9 +5,6 @@ header {
   background-color: $background-light-grey;
   color: white;
   min-height: 15vh;
-  .header-login-container {
-    display: flex;
-  }
   .header-marquee-top-container {
     background-color: $dark-grey;
     padding-block: 0.4rem;
@@ -18,7 +15,7 @@ header {
     padding-block: 0.4rem;
     text-align: center;
   }
-  .header-login-mainlogo-container {
+  .header-login-and-mainlogo-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
