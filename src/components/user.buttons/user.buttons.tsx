@@ -19,17 +19,24 @@ export function UserButtons() {
     <section>
       {!loggedUser && (
         <>
-          <Link to={'/register/'}>
-            <button>Register</button>
-          </Link>
           <Link to={'/login/'}>
-            <button>Login</button>
+            <img
+              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_50/v1701377671/elPerroVintage/nhlvlecz0fg1x7i0qtxy.png"
+              alt="User login logo"
+            />
           </Link>
         </>
       )}
       {loggedUser && (
         <>
-          <button onClick={logout}>Logout</button>
+          <div className="header-logout-container">
+            <img
+              onClick={logout}
+              role="button"
+              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_45/v1701881309/elPerroVintage/ukkb4janmcl1yrz5y7ye.png"
+              alt=""
+            />
+          </div>
           <p>Hola {loggedUser.name}</p>
           <img src={userAvatar!} alt={`imagen de ${loggedUser.name}`} />
         </>

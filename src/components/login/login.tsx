@@ -21,7 +21,7 @@ export function Login() {
   };
   return (
     <>
-      <h2>Login</h2>
+      <h2>Ingresar</h2>
       {!hasLogin && (
         <form onSubmit={handleSubmit} className="login-form">
           <input type="email" name="email" placeholder="email" required />
@@ -32,9 +32,12 @@ export function Login() {
             required
           />
           <div className="login-buttons-container">
-            <button type="submit">Login</button>
-            <Link to={'/home/'}>
-              <button type="button">Cancelar</button>
+            <button type="submit">Ingresar Cuenta</button>
+            <Link
+              to={'/register/'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <p>¿Aún no tienes cuenta?</p>
             </Link>
           </div>
         </form>

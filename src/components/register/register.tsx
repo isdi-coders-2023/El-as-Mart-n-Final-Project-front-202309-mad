@@ -17,7 +17,7 @@ export function Register() {
 
   return (
     <>
-      <h2>Register</h2>
+      <h2>Crear cuenta</h2>
 
       {!hasRegister && (
         <form onSubmit={handleSubmit} className="register-form">
@@ -33,10 +33,15 @@ export function Register() {
           <input type="number" name="age" placeholder="Edad" />
           <label htmlFor="avatar">Avatar</label>
           <input type="file" name="avatar" id="avatar" />
-          <button type="submit">Registrar</button>
-          <Link to={'/home/'}>
-            <button type="button">Cancelar</button>
-          </Link>
+          <div className="register-buttons-container">
+            <button type="submit">Crear cuenta</button>
+            <Link
+              to={'/login/'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <p>¿Ya estás registrado?</p>
+            </Link>
+          </div>
         </form>
       )}
       {hasRegister && (

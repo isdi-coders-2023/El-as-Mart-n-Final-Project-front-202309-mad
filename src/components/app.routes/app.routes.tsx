@@ -9,7 +9,7 @@ export function AppRoutes() {
       <Suspense>
         <Routes>
           <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="login" element={<Login></Login>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
         </Routes>
       </Suspense>
     </main>
