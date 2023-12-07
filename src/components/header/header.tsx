@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { UserButtons } from '../user.buttons/user.buttons';
 import './header.scss';
+import { LogoutButton } from '../logout.button/logout.button';
 
 export function Header() {
   return (
@@ -23,7 +24,9 @@ export function Header() {
             />
           </Link>
         </div>
-        <div className="header-logout-container"></div>
+        <div className="header-logout-container">
+          <LogoutButton></LogoutButton>
+        </div>
       </div>
       <div className="header-marquee-bottom-container">
         🔥 ESTATE ATENTO A NUESTRO ÚLTIMO DROP 🔥
