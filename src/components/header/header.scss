@@ -32,4 +32,12 @@ header {
       width: 2.5rem;
     }
   }
+  .user-buttons-container {
+    text-align: center;
+    p {
+      font-family: $contrail-one-font;
+      margin: 0;
+      color: black;
+    }
+  }
 }

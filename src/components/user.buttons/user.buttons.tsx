@@ -13,7 +13,7 @@ export function UserButtons() {
     makeImageURL(loggedUser?.avatar?.publicId, 50);
 
   return (
-    <section>
+    <div className="user-buttons-container">
       {!loggedUser && (
         <>
           <Link to={'/login/'}>
@@ -31,7 +31,7 @@ export function UserButtons() {
       )}
 
       {/* Ruta protegida del admin */}
-      {loggedUser && loggedUser.role === 'Admin' && <p>Cuenta Admin</p>}
-    </section>
+      {loggedUser && loggedUser.role === 'Admin' && <p>Admin panel</p>}
+    </div>
   );
 }
