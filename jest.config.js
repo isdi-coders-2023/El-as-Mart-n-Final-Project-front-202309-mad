@@ -15,5 +15,6 @@ export default {
     'src/config.ts',
     'src/store/store.ts',
     'src/components/app/app.tsx',
+    'src/services/images.ts',
   ],
 };
