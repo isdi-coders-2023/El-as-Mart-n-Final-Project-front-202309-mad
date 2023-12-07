@@ -20,19 +20,21 @@ export function Login() {
     setHasLogin(true);
   };
   return (
-    <>
-      <h2>Ingresar</h2>
+    <div className="login-form-container">
+      <div className="login-form-h2">
+        <h2>INGRESAR</h2>
+      </div>
       {!hasLogin && (
         <form onSubmit={handleSubmit} className="login-form">
-          <input type="email" name="email" placeholder="email" required />
+          <input type="email" name="email" placeholder="Email" required />
           <input
             type="password"
             name="passwd"
-            placeholder="password"
+            placeholder="Password"
             required
           />
           <div className="login-buttons-container">
-            <button type="submit">Ingresar Cuenta</button>
+            <button type="submit">INGRESAR CUENTA</button>
             <Link
               to={'/register/'}
               style={{ textDecoration: 'none', color: 'inherit' }}
@@ -50,6 +52,6 @@ export function Login() {
           </Link>
         </div>
       )}
-    </>
+    </div>
   );
 }
