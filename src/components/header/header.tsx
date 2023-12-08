@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom';
 import { UserButtons } from '../user.buttons/user.buttons';
 import './header.scss';
 import { LogoutButton } from '../logout.button/logout.button';
+import Marquee from 'react-fast-marquee';
 
 export function Header() {
   return (
     <header>
       <div className="header-marquee-top-container">
-        10% DE DESCUENTO SI DEJAS TU OPINIÓN SOBRE LA TIENDA
+        <Marquee>10% DE DESCUENTO SI DEJAS TU OPINIÓN SOBRE LA TIENDA</Marquee>
       </div>
       <div className="header-login-and-mainlogo-container">
         <div className="header-user-buttons-container">
