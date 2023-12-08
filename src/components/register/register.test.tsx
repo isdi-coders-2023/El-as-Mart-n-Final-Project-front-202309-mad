@@ -25,7 +25,7 @@ describe('Given Register Component', () => {
   });
 
   describe('When the user submits the form with correct values', () => {
-    test('Then it calls the login function with the correct values', async () => {
+    test('Then it calls the register function with the correct values', async () => {
       const form = screen.getByRole('form');
       const input = screen.getAllByRole('textbox');
       await userEvent.type(input[0], 'test@example.com');
