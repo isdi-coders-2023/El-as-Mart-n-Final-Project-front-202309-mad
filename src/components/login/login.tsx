@@ -26,7 +26,11 @@ export function Login() {
           <h2>INGRESAR</h2>
         </div>
         {!hasLogin && (
-          <form onSubmit={handleSubmit} className="login-form">
+          <form
+            onSubmit={handleSubmit}
+            className="login-form"
+            aria-label="form"
+          >
             <input type="email" name="email" placeholder="Email" required />
             <input
               type="password"
