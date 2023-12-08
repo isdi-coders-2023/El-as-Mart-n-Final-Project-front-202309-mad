@@ -22,7 +22,11 @@ export function Register() {
           <h2>CREAR CUENTA</h2>
         </div>
         {!hasRegister && (
-          <form onSubmit={handleSubmit} className="register-form">
+          <form
+            onSubmit={handleSubmit}
+            className="register-form"
+            aria-label="form"
+          >
             <input type="text" name="name" placeholder="Nombre" />
             <input type="text" name="surname" placeholder="Apellidos" />
             <input type="number" name="age" placeholder="Edad" />
