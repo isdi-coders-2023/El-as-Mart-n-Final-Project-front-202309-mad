@@ -31,7 +31,14 @@ export function UserButtons() {
       )}
 
       {/* Ruta protegida del admin */}
-      {loggedUser && loggedUser.role === 'Admin' && <p>Admin panel</p>}
+      {loggedUser && loggedUser.role === 'Admin' && (
+        <Link
+          to={'/admin/'}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <p>Admin panel</p>
+        </Link>
+      )}
     </div>
   );
 }
