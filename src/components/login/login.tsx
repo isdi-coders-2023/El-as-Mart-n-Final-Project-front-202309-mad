@@ -20,30 +20,32 @@ export function Login() {
     setHasLogin(true);
   };
   return (
-    <div className="login-form-container">
-      <div className="login-form-h2">
-        <h2>INGRESAR</h2>
+    <>
+      <div className="login-form-container">
+        <div className="login-form-h2">
+          <h2>INGRESAR</h2>
+        </div>
+        {!hasLogin && (
+          <form onSubmit={handleSubmit} className="login-form">
+            <input type="email" name="email" placeholder="Email" required />
+            <input
+              type="password"
+              name="passwd"
+              placeholder="Contraseña"
+              required
+            />
+            <div className="login-buttons-container">
+              <button type="submit">INGRESAR CUENTA</button>
+              <Link
+                to={'/register/'}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <p>¿Aún no tienes cuenta?</p>
+              </Link>
+            </div>
+          </form>
+        )}
       </div>
-      {!hasLogin && (
-        <form onSubmit={handleSubmit} className="login-form">
-          <input type="email" name="email" placeholder="Email" required />
-          <input
-            type="password"
-            name="passwd"
-            placeholder="Password"
-            required
-          />
-          <div className="login-buttons-container">
-            <button type="submit">INGRESAR CUENTA</button>
-            <Link
-              to={'/register/'}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <p>¿Aún no tienes cuenta?</p>
-            </Link>
-          </div>
-        </form>
-      )}
       {hasLogin && (
         <div>
           <p>Login correcto</p>
@@ -52,6 +54,6 @@ export function Login() {
           </Link>
         </div>
       )}
-    </div>
+    </>
   );
 }
