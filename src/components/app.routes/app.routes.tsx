@@ -1,7 +1,8 @@
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Register } from '../register/register';
-import { Login } from '../login/login';
+
+const Register = lazy(() => import('../../pages/register/register'));
+const Login = lazy(() => import('../../pages/login/login'));
 
 export function AppRoutes() {
   return (
