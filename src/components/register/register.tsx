@@ -38,8 +38,10 @@ export function Register() {
               placeholder="Contraseña"
               required
             />
-            <label htmlFor="avatar">Avatar</label>
-            <input type="file" name="avatar" id="avatar" />
+            <label className="custom-file-upload">
+              <input type="file" name="avatar" id="avatar" />
+              Selecciona tu avatar
+            </label>
             <div className="register-buttons-container">
               <button type="submit">CREAR CUENTA</button>
               <Link

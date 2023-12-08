@@ -47,11 +47,15 @@ export function Login() {
         )}
       </div>
       {hasLogin && (
-        <div>
-          <p>Login correcto</p>
-          <Link to={'/home/'}>
-            <button type="button">Continuar</button>
-          </Link>
+        <div className="correct-login-container">
+          <div className="correct-login-text">
+            <p>🎉LOGIN CORRECTO🎉</p>
+          </div>
+          <div className="correct-login-button">
+            <Link to={'/home/'}>
+              <button type="button">CONTINUAR</button>
+            </Link>
+          </div>
         </div>
       )}
     </>

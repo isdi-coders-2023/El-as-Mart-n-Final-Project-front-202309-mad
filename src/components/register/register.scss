@@ -21,6 +21,20 @@
       display: inline-block;
       border: 0.063rem solid #000000;
     }
+    input[type='file'] {
+      display: none;
+    }
+    .custom-file-upload {
+      margin: 0.5rem 0.5rem;
+      background-color: white;
+      font-family: $contrail-one-font;
+      font-size: small;
+      border: 1px solid #000000;
+      display: inline-block;
+      padding: 0.75rem 7.504rem;
+      color: #79808b;
+      cursor: pointer;
+    }
   }
   .register-buttons-container {
     text-align: center;
