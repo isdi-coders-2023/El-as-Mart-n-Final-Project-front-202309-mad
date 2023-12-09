@@ -10,7 +10,7 @@ import { LogoutButton } from './logout.button';
 jest.mock('../../hooks/use.users', () => ({
   useUsers: jest.fn().mockReturnValue({
     logout: jest.fn(),
-    loggedUser: { name: 'Elias' },
+    loggedUser: { name: 'NameTest' },
   }),
 }));
 describe('Given Logout Component', () => {

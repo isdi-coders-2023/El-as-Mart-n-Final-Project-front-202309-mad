@@ -1,11 +1,10 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
 import './user.buttons.scss';
 import { makeImageURL } from '../../services/images';
 import { Link } from 'react-router-dom';
+import { useUsers } from '../../hooks/use.users';
 
 export function UserButtons() {
-  const { loggedUser } = useSelector((state: RootState) => state.usersState);
+  const { loggedUser } = useUsers();
 
   const userAvatar =
     loggedUser &&
