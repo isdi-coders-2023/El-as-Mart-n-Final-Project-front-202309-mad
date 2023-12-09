@@ -27,15 +27,12 @@ describe('Given a scenario where...', () => {
       await appStore.dispatch(loginThunk(data));
       expect(data.repo.login).toHaveBeenCalled();
       expect(data.userStore.set).toHaveBeenCalled();
-
-      data.repo.login;
     });
     test('Then it should dispatch loginTokenThunk and update user store', async () => {
       const data = { ...sharedData, token: '' };
       await appStore.dispatch(loginTokenThunk(data));
       expect(data.repo.login).toHaveBeenCalled();
       expect(data.userStore.set).toHaveBeenCalled();
-      data.repo.login;
     });
   });
 });
