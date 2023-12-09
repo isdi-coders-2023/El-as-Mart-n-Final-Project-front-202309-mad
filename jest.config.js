@@ -16,5 +16,8 @@ export default {
     'src/store/store.ts',
     'src/components/app/app.tsx',
     'src/services/images.ts',
+    'src/pages/admin.panel/admin.panel.tsx',
+    'src/pages/login/login.tsx',
+    'src/pages/register/register.tsx',
   ],
 };
