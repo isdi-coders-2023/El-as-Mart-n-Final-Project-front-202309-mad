@@ -1,0 +1,43 @@
+@import '../../vars.scss';
+header {
+  font-family: $inter-font;
+  font-size: x-small;
+  background-color: $background-light-grey;
+  color: white;
+  min-height: 15vh;
+  .header-marquee-top-container {
+    background-color: $dark-grey;
+    padding-block: 0.4rem;
+    text-align: center;
+  }
+  .header-marquee-bottom-container {
+    background-color: $dark-grey;
+    padding-block: 0.4rem;
+    text-align: center;
+  }
+  .header-login-and-mainlogo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .header-logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.125rem;
+    width: 3.125rem;
+    cursor: pointer;
+    img {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+  .user-buttons-container {
+    text-align: center;
+    p {
+      font-family: $contrail-one-font;
+      margin: 0;
+      color: black;
+    }
+  }
+}
