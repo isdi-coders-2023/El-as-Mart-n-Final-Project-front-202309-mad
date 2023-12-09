@@ -15,19 +15,15 @@ export function UserButtons() {
   return (
     <div className="user-buttons-container">
       {!loggedUser && (
-        <>
-          <Link to={'/login/'}>
-            <img
-              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_50/v1701377671/elPerroVintage/nhlvlecz0fg1x7i0qtxy.png"
-              alt="User login logo"
-            />
-          </Link>
-        </>
+        <Link to={'/login/'}>
+          <img
+            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_50/v1701377671/elPerroVintage/nhlvlecz0fg1x7i0qtxy.png"
+            alt="User login logo"
+          />
+        </Link>
       )}
       {loggedUser && (
-        <>
-          <img src={userAvatar!} alt={`imagen de ${loggedUser.name}`} />
-        </>
+        <img src={userAvatar!} alt={`imagen de ${loggedUser.name}`} />
       )}
 
       {/* Ruta protegida del admin */}
