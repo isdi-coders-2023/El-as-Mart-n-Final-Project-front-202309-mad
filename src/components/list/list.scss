@@ -1,7 +1,18 @@
-.clothes-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  padding: 2rem;
+@import '../../vars.scss';
+.list-container {
+  display: flex;
+  flex-direction: column;
+  .list-title-container {
+    h2 {
+      font-family: $contrail-one-font;
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+  .clothes-list {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
