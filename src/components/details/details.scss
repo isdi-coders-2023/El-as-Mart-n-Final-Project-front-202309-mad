@@ -1,0 +1,21 @@
+@import '../../vars.scss';
+.details-container {
+  display: flex;
+  padding: 5rem;
+  gap: 3rem;
+  .details-info-container {
+    p {
+      font-family: $contrail-one-font;
+      font-size: 2rem;
+      .details-bold-text {
+        font-weight: 700;
+      }
+    }
+    .details-name-container {
+      p {
+        font-family: $contrail-one-font;
+        font-size: 3rem;
+      }
+    }
+  }
+}
