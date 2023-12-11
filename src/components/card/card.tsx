@@ -15,10 +15,14 @@ export function Card({ clothingItem }: Props) {
     clothingItem &&
     clothingItem.clothingItemFrontImg &&
     makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 160);
-  const desktopClothingItemFrontImg =
+  const desktopMediumClothingItemFrontImg =
     clothingItem &&
     clothingItem.clothingItemFrontImg &&
     makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 205);
+  const desktopBigClothingItemFrontImg =
+    clothingItem &&
+    clothingItem.clothingItemFrontImg &&
+    makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 255);
 
   return (
     <li className="clothes-card">
@@ -35,10 +39,16 @@ export function Card({ clothingItem }: Props) {
               className="mobile-front-img"
             />
             <img
-              src={desktopClothingItemFrontImg}
+              src={desktopMediumClothingItemFrontImg}
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="desktop-front-img"
+            />
+            <img
+              src={desktopBigClothingItemFrontImg}
+              alt={`imagen de ${clothingItem.name}`}
+              onClick={() => handleDetailsPage(clothingItem)}
+              className="desktopBig-front-img"
             />
           </Link>
         </div>
