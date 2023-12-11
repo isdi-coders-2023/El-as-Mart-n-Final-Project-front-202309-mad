@@ -33,8 +33,11 @@
   }
 }
 
-@media (min-width: 460px) {
+@media (min-width: 440px) {
   .list-container {
+    .list-title-container {
+      margin-block-start: 2rem;
+    }
     .retro-photos-container {
       .mobile-retro-img {
         display: none;
@@ -43,6 +46,11 @@
         display: flex;
       }
     }
+  }
+}
+
+@media (min-width: 750px) {
+  .list-container {
     .list-title-container {
       margin-block-start: 2.5rem;
       h2 {
@@ -54,7 +62,25 @@
     }
     .clothes-list {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1050px) {
+  .list-container {
+    .list-title-container {
+      margin-block-start: 2.5rem;
+      h2 {
+        margin: 0;
+      }
+    }
+    .size-filter-container {
+      margin-inline-start: 2.4%;
+    }
+    .clothes-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
