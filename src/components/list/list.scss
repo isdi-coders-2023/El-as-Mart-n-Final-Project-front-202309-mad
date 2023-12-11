@@ -9,10 +9,16 @@
       text-align: center;
     }
   }
+  .size-filter-container {
+    margin-block-end: 1rem;
+    margin-inline-start: 1.297rem;
+  }
   .clothes-list {
     padding: 0;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin: 0rem;
   }
 }
