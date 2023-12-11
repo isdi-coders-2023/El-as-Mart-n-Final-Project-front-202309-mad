@@ -11,10 +11,14 @@ type Props = {
 export function Card({ clothingItem }: Props) {
   const { handleDetailsPage } = useClothes();
 
-  const clothingItemFrontImg =
+  const mobileClothingItemFrontImg =
     clothingItem &&
     clothingItem.clothingItemFrontImg &&
     makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 160);
+  const desktopClothingItemFrontImg =
+    clothingItem &&
+    clothingItem.clothingItemFrontImg &&
+    makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 205);
 
   return (
     <li className="clothes-card">
@@ -25,9 +29,16 @@ export function Card({ clothingItem }: Props) {
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <img
-              src={clothingItemFrontImg}
+              src={mobileClothingItemFrontImg}
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
+              className="mobile-front-img"
+            />
+            <img
+              src={desktopClothingItemFrontImg}
+              alt={`imagen de ${clothingItem.name}`}
+              onClick={() => handleDetailsPage(clothingItem)}
+              className="desktop-front-img"
             />
           </Link>
         </div>

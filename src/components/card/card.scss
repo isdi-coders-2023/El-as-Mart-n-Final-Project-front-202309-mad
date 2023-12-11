@@ -10,6 +10,11 @@
     width: 10rem;
     border-radius: 0px 0px 10px 10px;
     box-shadow: 0 0 0.15rem 0;
+    .card-image-container {
+      .desktop-front-img {
+        display: none;
+      }
+    }
     .card-info-container {
       display: flex;
       flex-direction: column;
@@ -28,6 +33,40 @@
       }
       .card.price-container {
         font-size: 0.938rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 420px) {
+  .clothes-card {
+    .card-container {
+      width: 12.813rem;
+      height: 18.75rem;
+      .card-image-container {
+        height: 14.063rem;
+        display: flex;
+        align-items: center;
+        .mobile-front-img {
+          display: none;
+        }
+        .desktop-front-img {
+          display: flex;
+        }
+      }
+      .card-info-container {
+        width: 12.813rem;
+        height: 4.688rem;
+        .card-name-container {
+          p {
+            font-size: 0.875rem;
+          }
+        }
+        .card-price-container {
+          p {
+            font-size: 1.25rem;
+          }
+        }
       }
     }
   }

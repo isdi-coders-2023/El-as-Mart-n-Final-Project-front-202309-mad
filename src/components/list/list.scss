@@ -22,3 +22,15 @@
     margin: 0rem;
   }
 }
+
+@media (min-width: 420px) {
+  .list-container {
+    .size-filter-container {
+      margin-inline-start: 2.4%;
+    }
+    .clothes-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
