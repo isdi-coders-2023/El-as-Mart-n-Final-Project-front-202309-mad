@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ClothingItem } from '../entities/clothingItem';
 import { loadClothesThunk } from './clothes.thunk';
 
-type ClothesState = {
+export type ClothesState = {
   clothes: ClothingItem[];
   stateOption: 'idle' | 'loading' | 'error';
   currentClothingItem: ClothingItem | null;
