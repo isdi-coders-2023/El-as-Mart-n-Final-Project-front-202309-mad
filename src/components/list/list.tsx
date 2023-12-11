@@ -5,6 +5,7 @@ import { useClothes } from '../../hooks/use.clothes';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 import { Filter } from '../filter/filter';
+import { RetroPhotos } from '../retro.photos/retro.photos';
 
 export function List() {
   const { clothes } = useSelector((state: RootState) => state.clothesState);
@@ -17,6 +18,7 @@ export function List() {
   return (
     <>
       <div className="list-container">
+        <RetroPhotos></RetroPhotos>
         <div className="list-title-container">
           <h2>LAST DROP</h2>
         </div>

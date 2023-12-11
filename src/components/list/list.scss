@@ -3,10 +3,20 @@
   display: flex;
   flex-direction: column;
   .list-title-container {
+    margin-block: 1rem;
     h2 {
+      margin: 0;
       font-family: $contrail-one-font;
       font-size: 3rem;
       text-align: center;
+    }
+  }
+  .retro-photos-container {
+    img {
+      max-width: 100%;
+    }
+    .desktop-retro-img {
+      display: none;
     }
   }
   .size-filter-container {
@@ -25,6 +35,20 @@
 
 @media (min-width: 420px) {
   .list-container {
+    .retro-photos-container {
+      .mobile-retro-img {
+        display: none;
+      }
+      .desktop-retro-img {
+        display: flex;
+      }
+    }
+    .list-title-container {
+      margin-block-start: 1.5rem;
+      h2 {
+        margin: 0;
+      }
+    }
     .size-filter-container {
       margin-inline-start: 2.4%;
     }
