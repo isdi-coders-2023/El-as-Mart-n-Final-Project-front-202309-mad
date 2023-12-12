@@ -75,6 +75,27 @@ export function Details() {
             Taras: <span>{currentClothingItem?.tares}</span>
           </p>
         </div>
+        <div className="details-shopping-cart-container">
+          <div className="shopping-cart-text">
+            <p>AGREGAR AL CARRITO</p>
+          </div>
+          <div className="shopping-cart-icon">
+            <img
+              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.png"
+              alt="Icono de carrito de compra"
+            />
+          </div>
+        </div>
+        <div className="details-extra-info-container">
+          <p>
+            🚀 Realiza tu pedido ahora para recibirlo en las próximas 24/48
+            horas laborales.
+          </p>
+          <p>
+            🗣️ Las prendas vintage pueden tener un pequeño desgaste por el uso o
+            por el paso del tiempo.
+          </p>
+        </div>
       </div>
     </div>
   );
