@@ -5,6 +5,15 @@
     flex-direction: column;
     align-items: center;
     margin-block-start: 1rem;
+    .small-details-images-container {
+      cursor: pointer;
+      .mobile-small-front-img,
+      .mobile-small-back-img {
+        &.selected {
+          opacity: 0.7;
+        }
+      }
+    }
   }
   .details-info-container {
     display: flex;

@@ -5,9 +5,11 @@ import { makeImageURL } from '../../services/images';
 import { SetStateAction, useState } from 'react';
 
 export function Details() {
-  const [currentBigImage, setCurrentBigImage] = useState('front'); // 'front' o 'back'
+  const [currentBigImage, setCurrentBigImage] = useState('front');
+  const [selectedSmallImage, setSelectedSmallImage] = useState('front');
   const handleSmallImageClick = (side: SetStateAction<string>) => {
     setCurrentBigImage(side);
+    setSelectedSmallImage(side);
   };
 
   const { currentClothingItem } = useSelector(
@@ -48,13 +50,17 @@ export function Details() {
           <img
             src={mobileSmallClothingItemFrontImg!}
             alt={currentClothingItem?.name}
-            className="mobile-small-front-img"
+            className={`mobile-small-front-img ${
+              selectedSmallImage === 'front' ? 'selected' : ''
+            }`}
             onClick={() => handleSmallImageClick('front')}
           />
           <img
             src={mobileSmallClothingItemBackImg!}
             alt={currentClothingItem?.name}
-            className="mobile-small-back-img"
+            className={`mobile-small-back-img ${
+              selectedSmallImage === 'back' ? 'selected' : ''
+            }`}
             onClick={() => handleSmallImageClick('back')}
           />
         </div>
