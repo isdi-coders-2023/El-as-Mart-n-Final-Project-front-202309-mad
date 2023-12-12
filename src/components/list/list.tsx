@@ -2,14 +2,11 @@ import { useEffect } from 'react';
 import { Card } from '../card/card';
 import './list.scss';
 import { useClothes } from '../../hooks/use.clothes';
-import { RootState } from '../../store/store';
-import { useSelector } from 'react-redux';
 import { Filter } from '../filter/filter';
 import { RetroPhotos } from '../retro.photos/retro.photos';
 
 export function List() {
-  const { clothes } = useSelector((state: RootState) => state.clothesState);
-  const { loadClothes } = useClothes();
+  const { loadClothes, clothes } = useClothes();
 
   useEffect(() => {
     loadClothes();

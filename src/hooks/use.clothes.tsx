@@ -7,7 +7,7 @@ import { loadClothesThunk } from '../slices/clothes.thunk.ts';
 import { setCurrentClothingItem } from '../slices/clothes.slice.tsx';
 
 export function useClothes() {
-  const { currentClothingItem } = useSelector(
+  const { currentClothingItem, clothes } = useSelector(
     (state: RootState) => state.clothesState
   );
   const dispatch = useDispatch<AppDispatch>();
@@ -26,5 +26,6 @@ export function useClothes() {
     loadClothes,
     handleDetailsPage,
     currentClothingItem,
+    clothes,
   };
 }
