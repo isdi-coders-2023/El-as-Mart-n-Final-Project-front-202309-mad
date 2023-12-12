@@ -4,6 +4,25 @@ import { AppRoutes } from './app.routes';
 import '@testing-library/jest-dom';
 
 describe('Given AppRoutes component', () => {
+  describe('When we navigate to home page', () => {
+    const MockedHomeComponent = jest.fn().mockReturnValue(<h1>Home</h1>);
+    jest.mock('../../pages/home/home', () => MockedHomeComponent);
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/home']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Home');
+    });
+    test('Then the Home (List) component should been called', () => {
+      expect(MockedHomeComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
   describe('When we navigate to register page', () => {
     const MockedRegisterComponent = jest
       .fn()
@@ -65,6 +84,25 @@ describe('Given AppRoutes component', () => {
     });
     test('Then the Admin panel component should been called', () => {
       expect(MockedAdminPanelComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
+  describe('When we navigate to details page', () => {
+    const MockedDetailsComponent = jest.fn().mockReturnValue(<h1>Details</h1>);
+    jest.mock('../../pages/details/details', () => MockedDetailsComponent);
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/details/:id']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Details');
+    });
+    test('Then the Details component should been called', () => {
+      expect(MockedDetailsComponent).toHaveBeenCalled();
       expect(element).toBeInTheDocument();
     });
   });
