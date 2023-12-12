@@ -12,17 +12,14 @@ export function Card({ clothingItem }: Props) {
   const { handleDetailsPage } = useClothes();
 
   const mobileClothingItemFrontImg =
-    clothingItem &&
-    clothingItem.clothingItemFrontImg &&
-    makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 160);
+    clothingItem?.clothingItemFrontImg?.publicId &&
+    makeImageURL(clothingItem.clothingItemFrontImg.publicId, 160);
   const desktopMediumClothingItemFrontImg =
-    clothingItem &&
-    clothingItem.clothingItemFrontImg &&
-    makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 205);
+    clothingItem?.clothingItemFrontImg?.publicId &&
+    makeImageURL(clothingItem.clothingItemFrontImg.publicId, 205);
   const desktopBigClothingItemFrontImg =
-    clothingItem &&
-    clothingItem.clothingItemFrontImg &&
-    makeImageURL(clothingItem?.clothingItemFrontImg.publicId, 255);
+    clothingItem?.clothingItemFrontImg?.publicId &&
+    makeImageURL(clothingItem.clothingItemFrontImg.publicId, 255);
 
   return (
     <li className="clothes-card">

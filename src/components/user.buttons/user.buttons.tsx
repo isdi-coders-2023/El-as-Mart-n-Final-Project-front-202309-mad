@@ -7,9 +7,8 @@ export function UserButtons() {
   const { loggedUser } = useUsers();
 
   const userAvatar =
-    loggedUser &&
-    loggedUser.avatar &&
-    makeImageURL(loggedUser?.avatar?.publicId, 50);
+    loggedUser?.avatar?.publicId &&
+    makeImageURL(loggedUser.avatar.publicId, 50);
 
   return (
     <div className="user-buttons-container">

@@ -13,21 +13,17 @@ export function Details() {
   const { currentClothingItem } = useClothes();
 
   const mobileBigClothingItemFrontImg =
-    currentClothingItem &&
-    currentClothingItem.clothingItemFrontImg &&
-    makeImageURL(currentClothingItem?.clothingItemFrontImg.publicId, 340);
+    currentClothingItem?.clothingItemFrontImg?.publicId &&
+    makeImageURL(currentClothingItem.clothingItemFrontImg.publicId, 340);
   const mobileSmallClothingItemFrontImg =
-    currentClothingItem &&
-    currentClothingItem.clothingItemFrontImg &&
-    makeImageURL(currentClothingItem?.clothingItemFrontImg.publicId, 140);
+    currentClothingItem?.clothingItemFrontImg?.publicId &&
+    makeImageURL(currentClothingItem.clothingItemFrontImg.publicId, 140);
   const mobileBigClothingItemBackImg =
-    currentClothingItem &&
-    currentClothingItem.clothingItemBackImg &&
-    makeImageURL(currentClothingItem?.clothingItemBackImg.publicId, 340);
+    currentClothingItem?.clothingItemBackImg?.publicId &&
+    makeImageURL(currentClothingItem.clothingItemBackImg.publicId, 340);
   const mobileSmallClothingItemBackImg =
-    currentClothingItem &&
-    currentClothingItem.clothingItemBackImg &&
-    makeImageURL(currentClothingItem?.clothingItemBackImg.publicId, 140);
+    currentClothingItem?.clothingItemBackImg?.publicId &&
+    makeImageURL(currentClothingItem.clothingItemBackImg.publicId, 140);
 
   return (
     <div className="details-container">
