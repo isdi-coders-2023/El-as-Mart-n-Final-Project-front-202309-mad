@@ -37,18 +37,21 @@ export function Card({ clothingItem }: Props) {
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="mobile-front-img"
+              data-testid="details"
             />
             <img
               src={desktopMediumClothingItemFrontImg}
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="desktop-front-img"
+              data-testid="details2"
             />
             <img
               src={desktopBigClothingItemFrontImg}
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="desktopBig-front-img"
+              data-testid="details3"
             />
           </Link>
         </div>
