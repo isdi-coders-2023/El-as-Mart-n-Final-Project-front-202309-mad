@@ -1,8 +1,7 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
 import './details.scss';
 import { makeImageURL } from '../../services/images';
 import { SetStateAction, useState } from 'react';
+import { useClothes } from '../../hooks/use.clothes';
 
 export function Details() {
   const [currentBigImage, setCurrentBigImage] = useState('front');
@@ -11,10 +10,8 @@ export function Details() {
     setCurrentBigImage(side);
     setSelectedSmallImage(side);
   };
+  const { currentClothingItem } = useClothes();
 
-  const { currentClothingItem } = useSelector(
-    (state: RootState) => state.clothesState
-  );
   const mobileBigClothingItemFrontImg =
     currentClothingItem &&
     currentClothingItem.clothingItemFrontImg &&
@@ -54,6 +51,7 @@ export function Details() {
               selectedSmallImage === 'front' ? 'selected' : ''
             }`}
             onClick={() => handleSmallImageClick('front')}
+            data-testid="small-image-front"
           />
           <img
             src={mobileSmallClothingItemBackImg!}
@@ -62,6 +60,7 @@ export function Details() {
               selectedSmallImage === 'back' ? 'selected' : ''
             }`}
             onClick={() => handleSmallImageClick('back')}
+            data-testid="small-image-back"
           />
         </div>
       </div>

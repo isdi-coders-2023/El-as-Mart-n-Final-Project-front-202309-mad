@@ -1,12 +1,15 @@
 import { useCallback, useMemo } from 'react';
 import { ClothesRepo } from '../services/api.repo.clothes.ts';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../store/store';
 import { ClothingItem } from '../entities/clothingItem.ts';
 import { loadClothesThunk } from '../slices/clothes.thunk.ts';
 import { setCurrentClothingItem } from '../slices/clothes.slice.tsx';
 
 export function useClothes() {
+  const { currentClothingItem } = useSelector(
+    (state: RootState) => state.clothesState
+  );
   const dispatch = useDispatch<AppDispatch>();
 
   const repo = useMemo(() => new ClothesRepo(), []);
@@ -26,5 +29,6 @@ export function useClothes() {
   return {
     loadClothes,
     handleDetailsPage,
+    currentClothingItem,
   };
 }
