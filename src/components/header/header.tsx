@@ -15,7 +15,10 @@ export function Header() {
           <UserButtons></UserButtons>
         </div>
         <div className="header-mainlogo-container">
-          <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link
+            to={'/home'}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
             <img
               src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_120/v1701878572/elPerroVintage/mvejhq8vz3pwhejxztrf.png"
               alt="El Perro Vintage Logo"

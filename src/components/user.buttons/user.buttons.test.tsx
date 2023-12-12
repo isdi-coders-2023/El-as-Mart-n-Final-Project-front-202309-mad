@@ -9,7 +9,7 @@ import { User } from '../../entities/user';
 
 jest.mock('../../hooks/use.users', () => ({
   useUsers: jest.fn(),
-  loggedUser: { name: 'NameTest' },
+  loggedUser: { name: 'NameTest', avatar: { publicId: '1' } },
 }));
 
 describe('Given UserButtons Component', () => {
@@ -37,6 +37,7 @@ describe('Given UserButtons Component', () => {
           name: 'TestName',
           img: '',
           role: 'Admin',
+          avatar: { publicId: '1' },
         } as unknown as User,
         logout: jest.fn(),
       });

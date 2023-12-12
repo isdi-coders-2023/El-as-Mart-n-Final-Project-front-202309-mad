@@ -1,0 +1,87 @@
+@import '../../vars.scss';
+.list-container {
+  display: flex;
+  flex-direction: column;
+  .list-title-container {
+    margin-block: 1rem;
+    h2 {
+      margin: 0;
+      font-family: $contrail-one-font;
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+  .retro-photos-container {
+    img {
+      max-width: 100%;
+    }
+    .desktop-retro-img {
+      display: none;
+    }
+  }
+  .size-filter-container {
+    margin-block-end: 1rem;
+    margin-inline-start: 1.297rem;
+  }
+  .clothes-list {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin: 0rem;
+  }
+}
+
+@media (min-width: 440px) {
+  .list-container {
+    .list-title-container {
+      margin-block-start: 2rem;
+    }
+    .retro-photos-container {
+      .mobile-retro-img {
+        display: none;
+      }
+      .desktop-retro-img {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .list-container {
+    .list-title-container {
+      margin-block-start: 2.5rem;
+      h2 {
+        margin: 0;
+      }
+    }
+    .size-filter-container {
+      margin-inline-start: 2.4%;
+    }
+    .clothes-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1050px) {
+  .list-container {
+    .list-title-container {
+      margin-block-start: 2.5rem;
+      h2 {
+        font-size: 3.5rem;
+        margin: 0;
+      }
+    }
+    .size-filter-container {
+      margin-inline-start: 2.5rem;
+    }
+    .clothes-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

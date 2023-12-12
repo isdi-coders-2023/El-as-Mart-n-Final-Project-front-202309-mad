@@ -13,7 +13,7 @@ describe('Given usersReducer', () => {
 
   describe(' When users/login/pending action is dispacth  ', () => {
     test('Then the new state will be returned ', () => {
-      const action = { type: 'login/pending' }; //  Este nombre es así porque es asincrona (nombre del thunk más el estado que toque.)
+      const action = { type: 'login/pending' };
       const state: UsersState = {} as UsersState;
       const result = usersReducer(state, action);
       expect(result.loginLoadState).toBe('logging');
@@ -21,7 +21,7 @@ describe('Given usersReducer', () => {
   });
 
   test('Then the new state will be returned ', () => {
-    const action = { type: 'login/rejected' }; //  Este nombre es así porque es asincrona (nombre del thunk más el estado que toque.)
+    const action = { type: 'login/rejected' };
     const state: UsersState = {} as UsersState;
     const result = usersReducer(state, action);
     expect(result.loginLoadState).toBe('error');
@@ -29,7 +29,7 @@ describe('Given usersReducer', () => {
 
   test('Then the new state will be returned ', () => {
     const action = {
-      type: 'login/fulfilled', //  Este nombre es así porque es asincrona (nombre del thunk más el estado que toque.)
+      type: 'login/fulfilled',
       payload: { user: 'test user', token: 'token' },
     };
     const state: UsersState = {} as UsersState;

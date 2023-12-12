@@ -1,0 +1,119 @@
+@import '../../vars.scss';
+.details-container {
+  .details-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 1rem;
+    .small-details-images-container {
+      cursor: pointer;
+      .mobile-small-front-img,
+      .mobile-small-back-img {
+        &.selected {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .details-info-container {
+    display: flex;
+    flex-direction: column;
+    font-family: $contrail-one-font;
+    .details-name-container {
+      text-align: center;
+      margin-block: 0.8rem;
+      p {
+        font-size: 1.875rem;
+        margin: 0rem;
+        span {
+          color: red;
+        }
+      }
+    }
+    .details-price-container {
+      margin-block: 0.4rem;
+      margin-inline: 1.2rem;
+      p {
+        font-size: 2.25rem;
+        margin: 0;
+        color: red;
+      }
+    }
+    .details-size-container {
+      margin-block: 0.4rem;
+      margin-inline: 1.2rem;
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+        span {
+          color: $dark-grey;
+        }
+      }
+    }
+    .details-especific-sizes-container {
+      margin-block: 0.4rem;
+      margin-inline: 1.2rem;
+      p {
+        font-size: 1rem;
+        margin: 0;
+        span {
+          color: $dark-grey;
+        }
+      }
+    }
+    .details-tares-container {
+      margin-block: 0.4rem;
+      margin-inline: 1.2rem;
+      p {
+        font-size: 1rem;
+        margin: 0;
+        span {
+          color: $dark-grey;
+        }
+      }
+    }
+    .details-shopping-cart-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-block: 0.8rem;
+      margin-inline: 1.2rem;
+      .shopping-cart-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark-grey;
+        width: 12rem;
+        height: 3.125rem;
+        border: 1px solid black;
+        p {
+          font-family: $inter-font;
+          font-size: 0.75rem;
+          color: white;
+          margin: 0;
+        }
+      }
+      .shopping-cart-icon {
+        background-color: $buttons-grey;
+        width: 3.125rem;
+        height: 3.125rem;
+        display: block;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        img {
+          margin: 0.4rem;
+        }
+      }
+    }
+    .details-extra-info-container {
+      color: $dark-grey;
+      margin-block: 0.4rem;
+      margin-inline: 1.2rem;
+      p {
+        margin: 0.5rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

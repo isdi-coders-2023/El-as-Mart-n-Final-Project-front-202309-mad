@@ -1,23 +1,23 @@
 import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { AdminPanel } from './admin.panel';
+import { RetroPhotos } from './retro.photos';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { appStore } from '../../store/store';
 
-describe('Given AdminPanel component', () => {
+describe('Given RetroPhotos component', () => {
   describe('When we instantiate it', () => {
     beforeEach(() => {
       render(
         <BrowserRouter>
           <Provider store={appStore}>
-            <AdminPanel></AdminPanel>
+            <RetroPhotos></RetroPhotos>
           </Provider>
         </BrowserRouter>
       );
     });
     test('Then it should be in the document', () => {
-      const element = screen.getByRole('heading');
+      const element = screen.getByAltText('Fotografía retro Maradona');
       expect(element).toBeInTheDocument();
     });
   });

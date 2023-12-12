@@ -1,0 +1,114 @@
+@import '../../vars.scss';
+.clothes-card {
+  margin-block-end: 1.297rem;
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $contrail-one-font;
+    background-color: white;
+    width: 10rem;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 0.15rem 0;
+    .card-image-container {
+      .desktop-front-img {
+        display: none;
+      }
+      .desktopBig-front-img {
+        display: none;
+      }
+    }
+    .card-info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: $dark-grey;
+      width: 10rem;
+      height: 3.438rem;
+      border-radius: 0px 0px 10px 10px;
+      p {
+        margin-block: 0.125rem;
+        color: white;
+      }
+      .card-name-container {
+        font-size: 0.75rem;
+      }
+      .card.price-container {
+        font-size: 0.938rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 440px) {
+  .clothes-card {
+    .card-container {
+      width: 12.813rem;
+      height: 18.75rem;
+      .card-image-container {
+        height: 14.063rem;
+        display: flex;
+        align-items: center;
+        .mobile-front-img {
+          display: none;
+        }
+        .desktop-front-img {
+          display: flex;
+        }
+      }
+      .card-info-container {
+        width: 12.813rem;
+        height: 4.688rem;
+        .card-name-container {
+          p {
+            font-size: 0.875rem;
+          }
+        }
+        .card-price-container {
+          p {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1050px) {
+  .clothes-card {
+    margin-block-end: 2rem;
+    .card-container {
+      width: 15.938rem;
+      height: 21.875rem;
+      .card-image-container {
+        height: 17.188rem;
+        display: flex;
+        align-items: center;
+        .mobile-front-img {
+          display: none;
+        }
+        .desktop-front-img {
+          display: none;
+        }
+        .desktopBig-front-img {
+          display: flex;
+        }
+      }
+      .card-info-container {
+        width: 15.938rem;
+        height: 5.938rem;
+        .card-name-container {
+          p {
+            font-size: 1.125rem;
+          }
+        }
+        .card-price-container {
+          p {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
