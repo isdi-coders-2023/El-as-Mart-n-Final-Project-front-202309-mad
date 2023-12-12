@@ -51,6 +51,7 @@ export function Details() {
               selectedSmallImage === 'front' ? 'selected' : ''
             }`}
             onClick={() => handleSmallImageClick('front')}
+            onKeyDown={() => handleSmallImageClick('front')}
             data-testid="small-image-front"
           />
           <img
@@ -60,6 +61,7 @@ export function Details() {
               selectedSmallImage === 'back' ? 'selected' : ''
             }`}
             onClick={() => handleSmallImageClick('back')}
+            onKeyDown={() => handleSmallImageClick('back')}
             data-testid="small-image-back"
           />
         </div>
