@@ -15,11 +15,7 @@ export function useClothes() {
   const repo = useMemo(() => new ClothesRepo(), []);
 
   const loadClothes = useCallback(async () => {
-    try {
-      dispatch(loadClothesThunk(repo));
-    } catch (error) {
-      console.log((error as Error).message);
-    }
+    dispatch(loadClothesThunk(repo));
   }, [repo]);
 
   const handleDetailsPage = async (clothingItem: ClothingItem) => {
