@@ -37,7 +37,6 @@ export function Card({ clothingItem }: Props) {
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="mobile-front-img"
-              onKeyDown={() => handleDetailsPage(clothingItem)}
               data-testid="details"
             />
             <img
@@ -45,7 +44,6 @@ export function Card({ clothingItem }: Props) {
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="desktop-front-img"
-              onKeyDown={() => handleDetailsPage(clothingItem)}
               data-testid="details2"
             />
             <img
@@ -53,7 +51,6 @@ export function Card({ clothingItem }: Props) {
               alt={`imagen de ${clothingItem.name}`}
               onClick={() => handleDetailsPage(clothingItem)}
               className="desktopBig-front-img"
-              onKeyDown={() => handleDetailsPage(clothingItem)}
               data-testid="details3"
             />
           </Link>
