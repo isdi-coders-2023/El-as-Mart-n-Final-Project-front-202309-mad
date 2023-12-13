@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { User } from '../entities/user';
-import { LoginResponse } from '../types/login.response';
+import { User } from '../../entities/user';
+import { LoginResponse } from '../../types/login.response';
 import { loginThunk, loginTokenThunk } from './users.thunk';
 
 type LoginState = 'idle' | 'logging' | 'error';

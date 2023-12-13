@@ -6,8 +6,8 @@ import { ClothingItem } from '../../entities/clothingItem.ts';
 import {
   createClothingItemThunk,
   loadClothesThunk,
-} from '../../slices/clothes.thunk.ts';
-import { setCurrentClothingItem } from '../../slices/clothes.slice.tsx';
+} from '../../slices/clothes/clothes.thunk.ts';
+import { setCurrentClothingItem } from '../../slices/clothes/clothes.slice.tsx';
 
 export function useClothes() {
   const { currentClothingItem, clothes } = useSelector(

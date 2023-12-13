@@ -1,4 +1,4 @@
-import { ClothingItem } from '../entities/clothingItem';
+import { ClothingItem } from '../../entities/clothingItem';
 import clothesReducer, { ClothesState } from './clothes.slice';
 
 describe('Given clothesReducer', () => {

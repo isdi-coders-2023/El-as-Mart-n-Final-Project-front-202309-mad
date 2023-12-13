@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import clothingItemReducer from '../slices/clothes.slice';
-import usersReducer from '../slices/users.slice';
+import clothingItemReducer from '../slices/clothes/clothes.slice';
+import usersReducer from '../slices/users/users.slice';
 
 export const appStore = configureStore({
   reducer: {

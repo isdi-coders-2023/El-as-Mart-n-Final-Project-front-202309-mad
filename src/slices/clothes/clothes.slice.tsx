@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ClothingItem } from '../entities/clothingItem';
+import { ClothingItem } from '../../entities/clothingItem';
 import { loadClothesThunk, createClothingItemThunk } from './clothes.thunk';
 
 export type ClothesState = {
