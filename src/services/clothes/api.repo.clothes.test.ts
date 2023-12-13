@@ -2,7 +2,7 @@ import { ClothesRepo } from './api.repo.clothes';
 import { ClothingItem } from '../../entities/clothingItem';
 
 describe('Given ClothesRepo class', () => {
-  const repo = new ClothesRepo();
+  const repo = new ClothesRepo('');
   describe('When we instantiate it and response is ok', () => {
     let jsonMock: jest.Mock;
     beforeEach(() => {
