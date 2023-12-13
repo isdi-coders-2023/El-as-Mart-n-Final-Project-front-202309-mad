@@ -6,9 +6,14 @@ header {
   color: white;
   min-height: 15vh;
   .header-marquee-top-container {
+    display: flex;
     background-color: $dark-grey;
     padding-block: 0.4rem;
     text-align: center;
+    gap: 18rem;
+    p {
+      margin: 0;
+    }
   }
   .header-marquee-bottom-container {
     background-color: $dark-grey;

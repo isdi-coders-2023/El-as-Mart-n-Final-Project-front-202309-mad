@@ -106,6 +106,32 @@
         }
       }
     }
+    .admin-buttons {
+      display: flex;
+      justify-content: center;
+      margin-block: 0.8rem;
+      margin-inline: 1.2rem;
+      gap: 3rem;
+      .admin-delete-button {
+        background-color: $dark-grey;
+        width: 3.125rem;
+        height: 3.125rem;
+        border: 1px solid black;
+        img {
+          margin: 0.26rem;
+        }
+      }
+      .admin-edit-button {
+        background-color: $dark-grey;
+        width: 3.125rem;
+        height: 3.125rem;
+        border: 1px solid black;
+        img {
+          margin: 0.26rem;
+        }
+      }
+    }
+
     .details-extra-info-container {
       color: $dark-grey;
       margin-block: 0.4rem;

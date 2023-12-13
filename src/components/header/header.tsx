@@ -7,9 +7,14 @@ import Marquee from 'react-fast-marquee';
 export function Header() {
   return (
     <header>
-      <div className="header-marquee-top-container">
-        <Marquee>10% DE DESCUENTO SI DEJAS TU OPINIÓN SOBRE LA TIENDA</Marquee>
-      </div>
+      <Marquee>
+        <div className="header-marquee-top-container">
+          <p>10% DE DESCUENTO SI DEJAS TU OPINIÓN SOBRE LA TIENDA</p>
+          <p>ENVÍO GRATIS A PARTIR DE 60€</p>
+          <p>DEVOLUCIONES GRATIS EN ESPAÑA*</p>
+          <p></p>
+        </div>
+      </Marquee>
       <div className="header-login-and-mainlogo-container">
         <div className="header-user-buttons-container">
           <UserButtons></UserButtons>

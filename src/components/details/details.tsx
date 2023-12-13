@@ -105,8 +105,18 @@ export function Details() {
         )}
         {loggedUser && loggedUser!.role === 'Admin' && (
           <div className="admin-buttons">
-            <button>BORRAR</button>
-            <button>EDITAR</button>
+            <div className="admin-edit-button">
+              <img
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
+                alt=""
+              />
+            </div>
+            <div className="admin-delete-button">
+              <img
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489791/elPerroVintage/fobbisl877yv6qwhxmr7.png"
+                alt="Icono de papelera"
+              />
+            </div>
           </div>
         )}
         <div className="details-extra-info-container">
