@@ -11,14 +11,16 @@ jest.mock('react-redux', () => ({
 }));
 
 const mockClothingItem = {} as ClothingItem;
+const mockFormData = {} as FormData;
 describe('Given useClothes Hook', () => {
   const TestComponent = () => {
-    const { handleDetailsPage, loadClothes } = useClothes();
+    const { handleDetailsPage, loadClothes, createClothingItem } = useClothes();
 
     return (
       <>
         <button onClick={() => handleDetailsPage(mockClothingItem)}></button>
         <button onClick={() => loadClothes()}></button>
+        <button onClick={() => createClothingItem(mockFormData)}></button>
       </>
     );
   };
@@ -40,6 +42,10 @@ describe('Given useClothes Hook', () => {
     });
     test('Then the dispacht should have been called', async () => {
       await userEvent.click(elements[1]);
+      expect(useDispatch()).toHaveBeenCalled();
+    });
+    test('Then the dispacht should have been called', async () => {
+      await userEvent.click(elements[2]);
       expect(useDispatch()).toHaveBeenCalled();
     });
   });
