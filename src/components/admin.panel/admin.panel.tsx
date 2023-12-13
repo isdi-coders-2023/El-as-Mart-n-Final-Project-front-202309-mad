@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './admin.panel.scss';
 export function AdminPanel() {
   return (
@@ -6,7 +7,12 @@ export function AdminPanel() {
         <h2>ADMIN PANEL</h2>
       </div>
       <div className="admin-panel-buttons">
-        <button>AÑADIR PRENDA</button>
+        <Link
+          to={'/create'}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <button>AÑADIR PRENDA</button>
+        </Link>
         <button>CARRITO DE COMPRA</button>
       </div>
     </div>

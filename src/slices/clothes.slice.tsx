@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ClothingItem } from '../entities/clothingItem';
-import { loadClothesThunk } from './clothes.thunk';
+import { loadClothesThunk, createClothingItemThunk } from './clothes.thunk';
 
 export type ClothesState = {
   clothes: ClothingItem[];
@@ -44,6 +44,13 @@ const clothesSlice = createSlice({
       state.stateOption = 'error';
       return state;
     });
+    builder.addCase(
+      createClothingItemThunk.fulfilled,
+      (state: ClothesState, { payload }: PayloadAction<ClothingItem>) => {
+        state.clothes.push(payload);
+        return state;
+      }
+    );
   },
 });
 
