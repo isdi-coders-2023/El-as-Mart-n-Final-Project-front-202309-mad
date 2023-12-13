@@ -2,8 +2,8 @@ import { useClothes } from './use.clothes';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { Provider, useDispatch } from 'react-redux';
-import { appStore } from '../store/store';
-import { ClothingItem } from '../entities/clothingItem';
+import { appStore } from '../../store/store';
+import { ClothingItem } from '../../entities/clothingItem';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

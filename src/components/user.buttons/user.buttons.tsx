@@ -1,7 +1,7 @@
 import './user.buttons.scss';
 import { makeImageURL } from '../../services/images';
 import { Link } from 'react-router-dom';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 
 export function UserButtons() {
   const { loggedUser } = useUsers();

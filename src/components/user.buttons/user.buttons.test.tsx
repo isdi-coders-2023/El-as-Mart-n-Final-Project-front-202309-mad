@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { UserButtons } from './user.buttons';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import { appStore } from '../../store/store';

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { List } from './list';
 import { appStore } from '../../store/store';
 import { BrowserRouter } from 'react-router-dom';
-import { useClothes } from '../../hooks/use.clothes';
+import { useClothes } from '../../hooks/clothes/use.clothes';
 
 jest.mock('../../hooks/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({

@@ -1,7 +1,7 @@
 import './details.scss';
 import { makeImageURL } from '../../services/images';
 import { SetStateAction, useState } from 'react';
-import { useClothes } from '../../hooks/use.clothes';
+import { useClothes } from '../../hooks/clothes/use.clothes';
 
 export function Details() {
   const [currentBigImage, setCurrentBigImage] = useState('front');

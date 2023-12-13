@@ -1,6 +1,6 @@
 import { SyntheticEvent } from 'react';
 import './create.clothingItem.scss';
-import { useClothes } from '../../hooks/use.clothes';
+import { useClothes } from '../../hooks/clothes/use.clothes';
 import { useNavigate } from 'react-router-dom';
 
 export function CreateClothingItem() {

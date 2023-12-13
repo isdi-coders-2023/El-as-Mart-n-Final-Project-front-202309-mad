@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { appStore } from '../../store/store';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 import { LogoutButton } from './logout.button';
 
 jest.mock('../../hooks/use.users', () => ({

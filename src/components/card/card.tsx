@@ -1,4 +1,4 @@
-import { useClothes } from '../../hooks/use.clothes';
+import { useClothes } from '../../hooks/clothes/use.clothes';
 import { Link } from 'react-router-dom';
 import { ClothingItem } from '../../entities/clothingItem';
 import './card.scss';
