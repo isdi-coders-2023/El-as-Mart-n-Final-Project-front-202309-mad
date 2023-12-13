@@ -21,5 +21,6 @@ export default {
     'src/pages/register/register.tsx',
     'src/pages/details/details.tsx',
     'src/pages/home/home.tsx',
+    'src/pages/create.clothingItem/create.clothingItem.tsx',
   ],
 };
