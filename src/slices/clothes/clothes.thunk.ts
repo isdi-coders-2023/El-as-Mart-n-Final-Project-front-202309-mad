@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ClothesRepo } from '../../services/clothes/api.repo.clothes.ts';
 import { ClothingItem } from '../../entities/clothingItem.ts';
 
-type Params = {
+export type Params = {
   repo: ClothesRepo;
   newClothingItem: FormData;
 };
