@@ -1,5 +1,5 @@
 import { UsersRepo } from './api.repo.users';
-import { User, LoginUser } from '../entities/user';
+import { User, LoginUser } from '../../entities/user';
 
 describe('Given UsersRepo class', () => {
   const repo = new UsersRepo();

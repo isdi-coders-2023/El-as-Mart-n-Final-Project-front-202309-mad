@@ -1,5 +1,5 @@
 import { ClothesRepo } from './api.repo.clothes';
-import { ClothingItem } from '../entities/clothingItem';
+import { ClothingItem } from '../../entities/clothingItem';
 
 describe('Given ClothesRepo class', () => {
   const repo = new ClothesRepo();

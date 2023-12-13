@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { ClothesRepo } from '../services/api.repo.clothes.ts';
+import { ClothesRepo } from '../services/clothes/api.repo.clothes.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store/store';
 import { ClothingItem } from '../entities/clothingItem.ts';

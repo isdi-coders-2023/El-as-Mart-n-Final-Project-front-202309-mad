@@ -1,5 +1,5 @@
-import { serverUrl } from '../config';
-import { ClothingItem } from '../entities/clothingItem';
+import { serverUrl } from '../../config';
+import { ClothingItem } from '../../entities/clothingItem';
 
 export class ClothesRepo {
   apiUrl = serverUrl + '/clothes';

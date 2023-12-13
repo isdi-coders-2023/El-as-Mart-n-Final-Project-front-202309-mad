@@ -1,5 +1,5 @@
 import { loadClothesThunk } from './clothes.thunk';
-import { ClothesRepo } from '../services/api.repo.clothes.ts';
+import { ClothesRepo } from '../services/clothes/api.repo.clothes.ts';
 import { appStore } from '../store/store';
 
 describe('Given a scenario where...', () => {
