@@ -2,6 +2,7 @@ import './details.scss';
 import { makeImageURL } from '../../services/images';
 import { SetStateAction, useState } from 'react';
 import { useClothes } from '../../hooks/clothes/use.clothes';
+import { useUsers } from '../../hooks/users/use.users';
 
 export function Details() {
   const [currentBigImage, setCurrentBigImage] = useState('front');
@@ -11,6 +12,7 @@ export function Details() {
     setSelectedSmallImage(side);
   };
   const { currentClothingItem } = useClothes();
+  const { loggedUser } = useUsers();
 
   const mobileBigClothingItemFrontImg =
     currentClothingItem?.clothingItemFrontImg?.publicId &&
@@ -88,17 +90,25 @@ export function Details() {
             Taras: <span>{currentClothingItem?.tares}</span>
           </p>
         </div>
-        <div className="details-shopping-cart-container">
-          <div className="shopping-cart-text">
-            <p>AGREGAR AL CARRITO</p>
+        {(!loggedUser || (loggedUser && loggedUser.role === 'User')) && (
+          <div className="details-shopping-cart-container">
+            <div className="shopping-cart-text">
+              <p>AGREGAR AL CARRITO</p>
+            </div>
+            <div className="shopping-cart-icon">
+              <img
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.png"
+                alt="Icono de carrito de compra"
+              />
+            </div>
           </div>
-          <div className="shopping-cart-icon">
-            <img
-              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.png"
-              alt="Icono de carrito de compra"
-            />
+        )}
+        {loggedUser && loggedUser!.role === 'Admin' && (
+          <div className="admin-buttons">
+            <button>BORRAR</button>
+            <button>EDITAR</button>
           </div>
-        </div>
+        )}
         <div className="details-extra-info-container">
           <p>
             🚀 Realiza tu pedido ahora para recibirlo en las próximas 24/48
