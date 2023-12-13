@@ -1,6 +1,6 @@
-import { serverUrl } from '../config';
-import { LoginUser, User } from '../entities/user';
-import { LoginResponse } from '../types/login.response';
+import { serverUrl } from '../../config';
+import { LoginUser, User } from '../../entities/user';
+import { LoginResponse } from '../../types/login.response';
 
 export class UsersRepo {
   apiUrl = serverUrl + '/users';

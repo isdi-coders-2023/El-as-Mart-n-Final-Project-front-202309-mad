@@ -2,8 +2,8 @@ import { useClothes } from './use.clothes';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { Provider, useDispatch } from 'react-redux';
-import { appStore } from '../store/store';
-import { ClothingItem } from '../entities/clothingItem';
+import { appStore } from '../../store/store';
+import { ClothingItem } from '../../entities/clothingItem';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -11,14 +11,16 @@ jest.mock('react-redux', () => ({
 }));
 
 const mockClothingItem = {} as ClothingItem;
+const mockFormData = {} as FormData;
 describe('Given useClothes Hook', () => {
   const TestComponent = () => {
-    const { handleDetailsPage, loadClothes } = useClothes();
+    const { handleDetailsPage, loadClothes, createClothingItem } = useClothes();
 
     return (
       <>
         <button onClick={() => handleDetailsPage(mockClothingItem)}></button>
         <button onClick={() => loadClothes()}></button>
+        <button onClick={() => createClothingItem(mockFormData)}></button>
       </>
     );
   };
@@ -40,6 +42,10 @@ describe('Given useClothes Hook', () => {
     });
     test('Then the dispacht should have been called', async () => {
       await userEvent.click(elements[1]);
+      expect(useDispatch()).toHaveBeenCalled();
+    });
+    test('Then the dispacht should have been called', async () => {
+      await userEvent.click(elements[2]);
       expect(useDispatch()).toHaveBeenCalled();
     });
   });

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Card } from '../card/card';
 import './list.scss';
-import { useClothes } from '../../hooks/use.clothes';
+import { useClothes } from '../../hooks/clothes/use.clothes';
 import { Filter } from '../filter/filter';
 import { RetroPhotos } from '../retro.photos/retro.photos';
 

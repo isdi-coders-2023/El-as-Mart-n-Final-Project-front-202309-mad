@@ -4,10 +4,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { appStore } from '../../store/store';
 import { Login } from './login';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 import '@testing-library/jest-dom';
 
-jest.mock('../../hooks/use.users', () => ({
+jest.mock('../../hooks/users/use.users', () => ({
   useUsers: jest.fn().mockReturnValue({
     login: jest.fn(),
   }),

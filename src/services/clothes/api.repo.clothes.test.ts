@@ -1,8 +1,8 @@
 import { ClothesRepo } from './api.repo.clothes';
-import { ClothingItem } from '../entities/clothingItem';
+import { ClothingItem } from '../../entities/clothingItem';
 
 describe('Given ClothesRepo class', () => {
-  const repo = new ClothesRepo();
+  const repo = new ClothesRepo('');
   describe('When we instantiate it and response is ok', () => {
     let jsonMock: jest.Mock;
     beforeEach(() => {
@@ -18,8 +18,16 @@ describe('Given ClothesRepo class', () => {
       expect(jsonMock).toHaveBeenCalled();
       expect(result).toStrictEqual(expected);
     });
+    test('Then method createClothingItem should...', async () => {
+      const mockFormData = {} as FormData;
+      const expected = [] as ClothingItem[];
+      const result = await repo.createClothingItem(mockFormData);
+      expect(jsonMock).toHaveBeenCalled();
+      expect(result).toStrictEqual(expected);
+    });
   });
   describe('When we instantiate it and response is bad', () => {
+    const mockFormData = {} as FormData;
     beforeEach(() => {
       global.fetch = jest.fn().mockResolvedValueOnce({
         ok: false,
@@ -29,6 +37,9 @@ describe('Given ClothesRepo class', () => {
     });
     test('Then method getUsers should throw an error', async () => {
       expect(repo.getClothes()).rejects.toThrow();
+    });
+    test('Then method createClothingItem should throw an error', async () => {
+      expect(repo.createClothingItem(mockFormData)).rejects.toThrow();
     });
   });
 });

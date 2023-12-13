@@ -1,6 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { LoginUser } from '../../entities/user';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 import './login.scss';
 import { Link } from 'react-router-dom';
 

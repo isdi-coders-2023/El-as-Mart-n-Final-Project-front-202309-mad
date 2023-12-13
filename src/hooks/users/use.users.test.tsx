@@ -2,10 +2,10 @@ import { useUsers } from './use.users';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { Provider, useDispatch } from 'react-redux';
-import { UsersRepo } from '../services/api.repo.users';
-import { LoginUser } from '../entities/user';
-import { LocalStorage } from '../services/local.storage';
-import { appStore } from '../store/store';
+import { UsersRepo } from '../../services/users/api.repo.users';
+import { LoginUser } from '../../entities/user';
+import { LocalStorage } from '../../services/local.storage';
+import { appStore } from '../../store/store';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

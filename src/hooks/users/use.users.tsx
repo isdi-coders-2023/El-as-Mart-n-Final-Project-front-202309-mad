@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../store/store';
-import { ac } from '../slices/users.slice';
-import { loginThunk, loginTokenThunk } from '../slices/users.thunk';
-import { UsersRepo } from '../services/api.repo.users';
-import { LoginUser } from '../entities/user';
-import { LocalStorage } from '../services/local.storage';
+import { AppDispatch, RootState } from '../../store/store';
+import { ac } from '../../slices/users/users.slice';
+import { loginThunk, loginTokenThunk } from '../../slices/users/users.thunk';
+import { UsersRepo } from '../../services/users/api.repo.users';
+import { LoginUser } from '../../entities/user';
+import { LocalStorage } from '../../services/local.storage';
 
 export function useUsers() {
   const { loggedUser } = useSelector((state: RootState) => state.usersState);

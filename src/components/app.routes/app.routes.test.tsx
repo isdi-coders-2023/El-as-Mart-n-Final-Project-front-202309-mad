@@ -106,4 +106,28 @@ describe('Given AppRoutes component', () => {
       expect(element).toBeInTheDocument();
     });
   });
+  describe('When we navigate to create page', () => {
+    const MockedCreateClothingItemComponent = jest
+      .fn()
+      .mockReturnValue(<h1>Añadir Prenda</h1>);
+    jest.mock(
+      '../../pages/create.clothingItem/create.clothingItem',
+      () => MockedCreateClothingItemComponent
+    );
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/create']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Añadir Prenda');
+    });
+    test('Then the CreateClothingItem component should been called', () => {
+      expect(MockedCreateClothingItemComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
 });

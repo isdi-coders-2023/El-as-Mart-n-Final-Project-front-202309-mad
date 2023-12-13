@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { AppRoutes } from '../app.routes/app.routes';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 import { Header } from '../header/header';
 
 export function App() {

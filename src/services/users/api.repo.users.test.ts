@@ -1,5 +1,5 @@
 import { UsersRepo } from './api.repo.users';
-import { User, LoginUser } from '../entities/user';
+import { User, LoginUser } from '../../entities/user';
 
 describe('Given UsersRepo class', () => {
   const repo = new UsersRepo();
@@ -39,10 +39,9 @@ describe('Given UsersRepo class', () => {
     });
 
     test('Then method login should...', async () => {
-      const loginUser: LoginUser = {
+      const loginUser = {
         email: 'test@test.com',
-        passwd: 'passwdtest',
-      };
+      } as LoginUser;
       const expectedUrl = 'http://localhost:3800/users/login';
 
       global.fetch = jest.fn().mockResolvedValue({
@@ -63,10 +62,9 @@ describe('Given UsersRepo class', () => {
 
     test('Then method loginWithToken should...', async () => {
       const mockToken = 'mockToken';
-      const loginUser: LoginUser = {
+      const loginUser = {
         email: 'test@test.com',
-        passwd: 'passwdtest',
-      };
+      } as LoginUser;
       const expectedUrl = 'http://localhost:3800/users/login';
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
@@ -100,10 +98,9 @@ describe('Given UsersRepo class', () => {
       expect(repo.createUser(newUser)).rejects.toThrow();
     });
     test('Then method login should throw an error', async () => {
-      const loginUser: LoginUser = {
+      const loginUser = {
         email: 'test@test.com',
-        passwd: 'passwdtest',
-      };
+      } as LoginUser;
       expect(repo.login(loginUser)).rejects.toThrow();
     });
     test('Then method loginWithToken should throw an error', async () => {

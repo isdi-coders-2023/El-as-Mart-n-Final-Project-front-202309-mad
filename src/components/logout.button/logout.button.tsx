@@ -1,4 +1,4 @@
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 
 export function LogoutButton() {
   const { logout, loggedUser } = useUsers();

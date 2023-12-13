@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
-import { useUsers } from '../../hooks/use.users';
+import { useUsers } from '../../hooks/users/use.users';
 import './register.scss';
 import { Link } from 'react-router-dom';
 
