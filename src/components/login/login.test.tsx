@@ -7,7 +7,7 @@ import { Login } from './login';
 import { useUsers } from '../../hooks/users/use.users';
 import '@testing-library/jest-dom';
 
-jest.mock('../../hooks/use.users', () => ({
+jest.mock('../../hooks/users/use.users', () => ({
   useUsers: jest.fn().mockReturnValue({
     login: jest.fn(),
   }),

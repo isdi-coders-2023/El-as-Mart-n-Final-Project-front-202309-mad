@@ -7,7 +7,7 @@ import { appStore } from '../../store/store';
 import { useUsers } from '../../hooks/users/use.users';
 import { LogoutButton } from './logout.button';
 
-jest.mock('../../hooks/use.users', () => ({
+jest.mock('../../hooks/users/use.users', () => ({
   useUsers: jest.fn().mockReturnValue({
     logout: jest.fn(),
     loggedUser: { name: 'NameTest' },

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
-jest.mock('../../hooks/use.clothes', () => ({
+jest.mock('../../hooks/clothes/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({
     currentClothingItem: {
       name: 'Test',

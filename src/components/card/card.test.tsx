@@ -8,7 +8,7 @@ import { ClothingItem } from '../../entities/clothingItem';
 
 import userEvent from '@testing-library/user-event';
 
-jest.mock('../../hooks/use.clothes', () => ({
+jest.mock('../../hooks/clothes/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({
     handleDetailsPage: jest.fn(),
   }),

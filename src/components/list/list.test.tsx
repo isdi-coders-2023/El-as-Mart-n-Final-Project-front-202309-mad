@@ -6,7 +6,7 @@ import { appStore } from '../../store/store';
 import { BrowserRouter } from 'react-router-dom';
 import { useClothes } from '../../hooks/clothes/use.clothes';
 
-jest.mock('../../hooks/use.clothes', () => ({
+jest.mock('../../hooks/clothes/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({
     clothes: [
       { id: '1', name: 'Bomber' },
