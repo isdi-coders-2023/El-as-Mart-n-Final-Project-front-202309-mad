@@ -41,5 +41,9 @@ describe('Given ClothesRepo class', () => {
     test('Then method createClothingItem should throw an error', async () => {
       expect(repo.createClothingItem(mockFormData)).rejects.toThrow();
     });
+    test('Then deleteClothingItemshould throw an error', async () => {
+      const clothingItemId = '1';
+      await expect(repo.deleteClothingItem(clothingItemId)).rejects.toThrow();
+    });
   });
 });
