@@ -43,7 +43,7 @@ describe('Given clothesReducer', () => {
       expect(result.stateOption).toBe('idle');
     });
   });
-  describe('When create/fulfilled action is dispatched', () => {
+  describe('When clothes/create/fulfilled action is dispatched', () => {
     test('Then the new ClothingItem should be added to the state', () => {
       const mockClothingItem = {
         id: '1',
@@ -56,6 +56,23 @@ describe('Given clothesReducer', () => {
       const state: ClothesState = { clothes: [] } as unknown as ClothesState;
       const result = clothesReducer(state, action);
       expect(result.clothes).toStrictEqual([mockClothingItem]);
+    });
+  });
+  describe('When clothes/delete/fulfilled action is dispacth', () => {
+    test('Then the skin should be removed froms the state', () => {
+      const mockClothingItem = {
+        id: '1',
+        name: 'NameTest',
+      } as unknown as ClothingItem;
+      const action = {
+        type: 'delete/fulfilled',
+        payload: mockClothingItem as unknown as ClothingItem['id'],
+      };
+      const state: ClothesState = {
+        clothes: [mockClothingItem],
+      } as ClothesState;
+      const result = clothesReducer(state, action);
+      expect(result.clothes).toStrictEqual([]);
     });
   });
 });
