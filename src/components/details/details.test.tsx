@@ -48,16 +48,16 @@ describe('Given Details Component', () => {
       expect(result).toBeInTheDocument();
     });
     test('Then should handle small image click', async () => {
-      const frontImage = screen.getByTestId('small-image-front');
-      await userEvent.click(frontImage);
-      const backImage = screen.getByTestId('small-image-back');
-      await userEvent.click(backImage);
+      const frontImage = screen.getAllByTestId('small-image-front');
+      await userEvent.click(frontImage[0]);
+      const backImage = screen.getAllByTestId('small-image-back');
+      await userEvent.click(backImage[0]);
     });
     test('Then should handle small image click', async () => {
-      const frontImage = screen.getByTestId('small-image-front');
-      await userEvent.click(frontImage);
-      const backImage = screen.getByTestId('small-image-back');
-      await userEvent.click(backImage);
+      const frontImage = screen.getAllByTestId('small-image-front');
+      await userEvent.click(frontImage[1]);
+      const backImage = screen.getAllByTestId('small-image-back');
+      await userEvent.click(backImage[1]);
     });
     test('Then should render the shopping cart button', async () => {
       const shoppingCart = screen.getByAltText('Icono de carrito de compra');
