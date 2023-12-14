@@ -30,7 +30,7 @@ export function CreateClothingItem() {
         <input type="text" name="price" placeholder="Precio" />
         <input
           type="text"
-          name="clothingItemHeigh"
+          name="clothingItemHeight"
           placeholder="Largo de la prenda"
         />
         <input
