@@ -1,6 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ClothingItem } from '../../entities/clothingItem';
-import { loadClothesThunk, createClothingItemThunk } from './clothes.thunk';
+import {
+  loadClothesThunk,
+  createClothingItemThunk,
+  deleteClothingItemThunk,
+} from './clothes.thunk';
 
 export type ClothesState = {
   clothes: ClothingItem[];
@@ -48,6 +52,16 @@ const clothesSlice = createSlice({
       createClothingItemThunk.fulfilled,
       (state: ClothesState, { payload }: PayloadAction<ClothingItem>) => {
         state.clothes.push(payload);
+        return state;
+      }
+    );
+    builder.addCase(
+      deleteClothingItemThunk.fulfilled,
+      (state: ClothesState, { payload }: PayloadAction<ClothingItem['id']>) => {
+        state.clothes.splice(
+          state.clothes.findIndex((item) => item.id === payload),
+          1
+        );
         return state;
       }
     );

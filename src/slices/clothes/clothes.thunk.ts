@@ -22,3 +22,14 @@ export const createClothingItemThunk = createAsyncThunk<ClothingItem, Params>(
     return finalClothingItem;
   }
 );
+
+export const deleteClothingItemThunk = createAsyncThunk<
+  ClothingItem['id'],
+  {
+    repo: ClothesRepo;
+    id: ClothingItem['id'];
+  }
+>('delete', async ({ repo, id }) => {
+  await repo.deleteClothingItem(id);
+  return id;
+});

@@ -3,16 +3,22 @@ import { makeImageURL } from '../../services/images';
 import { SetStateAction, useState } from 'react';
 import { useClothes } from '../../hooks/clothes/use.clothes';
 import { useUsers } from '../../hooks/users/use.users';
+import { useNavigate } from 'react-router-dom';
 
 export function Details() {
+  const { currentClothingItem, deleteClothingItem } = useClothes();
+  const { loggedUser } = useUsers();
   const [currentBigImage, setCurrentBigImage] = useState('front');
   const [selectedSmallImage, setSelectedSmallImage] = useState('front');
   const handleSmallImageClick = (side: SetStateAction<string>) => {
     setCurrentBigImage(side);
     setSelectedSmallImage(side);
   };
-  const { currentClothingItem } = useClothes();
-  const { loggedUser } = useUsers();
+  const navigate = useNavigate();
+  const handleDelete = () => {
+    deleteClothingItem(currentClothingItem!.id);
+    navigate('/home');
+  };
 
   const mobileBigClothingItemFrontImg =
     currentClothingItem?.clothingItemFrontImg?.publicId &&
@@ -108,13 +114,15 @@ export function Details() {
             <div className="admin-edit-button">
               <img
                 src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
-                alt=""
+                alt="Icono de editar"
               />
             </div>
             <div className="admin-delete-button">
               <img
+                role="button"
                 src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489791/elPerroVintage/fobbisl877yv6qwhxmr7.png"
                 alt="Icono de papelera"
+                onClick={handleDelete}
               />
             </div>
           </div>
