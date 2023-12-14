@@ -5,6 +5,8 @@ import { appStore } from '../../store/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { useUsers } from '../../hooks/users/use.users';
+import { User } from '../../entities/user';
 
 jest.mock('../../hooks/clothes/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({
@@ -12,6 +14,16 @@ jest.mock('../../hooks/clothes/use.clothes', () => ({
       name: 'Test',
       clothingItemFrontImg: { publicId: '1' },
       clothingItemBackImg: { publicId: '1' },
+    },
+    deleteClothingItem: jest.fn(),
+  }),
+}));
+
+jest.mock('../../hooks/users/use.users', () => ({
+  useUsers: jest.fn().mockReturnValue({
+    loggedUser: {
+      name: 'Test',
+      role: 'User',
     },
   }),
 }));
@@ -40,6 +52,44 @@ describe('Given Details Component', () => {
       await userEvent.click(frontImage);
       const backImage = screen.getByTestId('small-image-back');
       await userEvent.click(backImage);
+    });
+    test('Then should handle small image click', async () => {
+      const frontImage = screen.getByTestId('small-image-front');
+      await userEvent.click(frontImage);
+      const backImage = screen.getByTestId('small-image-back');
+      await userEvent.click(backImage);
+    });
+    test('Then should render the shopping cart button', async () => {
+      const shoppingCart = screen.getByAltText('Icono de carrito de compra');
+      expect(shoppingCart).toBeInTheDocument();
+    });
+  });
+  describe('When the user has the role Admin', () => {
+    beforeEach(() => {
+      useUsers().loggedUser = { name: 'Test', role: 'Admin' } as User;
+      render(
+        <BrowserRouter>
+          <Provider store={appStore}>
+            <Details></Details>
+          </Provider>
+        </BrowserRouter>
+      );
+    });
+    test('Then should render edit and delete buttons', () => {
+      const deleteButton = screen.getByAltText('Icono de papelera');
+      expect(deleteButton).toBeInTheDocument();
+      const editButton = screen.getByAltText('Icono de editar');
+      expect(editButton).toBeInTheDocument();
+    });
+    test('Then delete button should call handleDelete when is clicked', async () => {
+      let deleteButton = screen.getByAltText('Icono de papelera');
+      await userEvent.click(deleteButton);
+      const confirmButton = screen.getByTestId('confirm-button');
+      await userEvent.click(confirmButton);
+      deleteButton = screen.getByAltText('Icono de papelera');
+      await userEvent.click(deleteButton);
+      const negateButton = screen.getByTestId('negate-button');
+      await userEvent.click(negateButton);
     });
   });
 });

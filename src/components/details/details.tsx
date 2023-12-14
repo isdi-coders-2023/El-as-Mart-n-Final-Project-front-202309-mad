@@ -132,10 +132,15 @@ export function Details() {
                   <p
                     role="button"
                     onClick={() => confirmDelete(currentClothingItem!.id)}
+                    data-testid="confirm-button"
                   >
                     👍
                   </p>
-                  <p role="button" onClick={() => cancelDelete()}>
+                  <p
+                    role="button"
+                    onClick={() => cancelDelete()}
+                    data-testid="negate-button"
+                  >
                     👎
                   </p>
                 </div>
