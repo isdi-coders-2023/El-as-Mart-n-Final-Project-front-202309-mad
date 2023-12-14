@@ -10,14 +10,22 @@ export function Details() {
   const { loggedUser } = useUsers();
   const [currentBigImage, setCurrentBigImage] = useState('front');
   const [selectedSmallImage, setSelectedSmallImage] = useState('front');
+  const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
   const handleSmallImageClick = (side: SetStateAction<string>) => {
     setCurrentBigImage(side);
     setSelectedSmallImage(side);
   };
   const navigate = useNavigate();
   const handleDelete = () => {
-    deleteClothingItem(currentClothingItem!.id);
+    setShowConfirmationDialog(true);
+  };
+  const confirmDelete = (itemId: string) => {
+    deleteClothingItem(itemId);
     navigate('/home');
+    setShowConfirmationDialog(false);
+  };
+  const cancelDelete = () => {
+    setShowConfirmationDialog(false);
   };
 
   const mobileBigClothingItemFrontImg =
@@ -111,20 +119,45 @@ export function Details() {
         )}
         {loggedUser && loggedUser!.role === 'Admin' && (
           <div className="admin-buttons">
-            <div className="admin-edit-button">
-              <img
-                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
-                alt="Icono de editar"
-              />
-            </div>
-            <div className="admin-delete-button">
-              <img
-                role="button"
-                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489791/elPerroVintage/fobbisl877yv6qwhxmr7.png"
-                alt="Icono de papelera"
-                onClick={handleDelete}
-              />
-            </div>
+            {showConfirmationDialog ? (
+              <div className="confirmation-dialog">
+                <div className="confirmation-text">
+                  <p>⚠️</p>
+                  <p className="underline">
+                    ¿Estás seguro de que quieres eliminar esta prenda?
+                  </p>
+                  <p>⚠️</p>
+                </div>
+                <div className="confirmation-buttons">
+                  <p
+                    role="button"
+                    onClick={() => confirmDelete(currentClothingItem!.id)}
+                  >
+                    👍
+                  </p>
+                  <p role="button" onClick={() => cancelDelete()}>
+                    👎
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="admin-edit-button">
+                  <img
+                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
+                    alt="Icono de editar"
+                  />
+                </div>
+                <div className="admin-delete-button">
+                  <img
+                    role="button"
+                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489791/elPerroVintage/fobbisl877yv6qwhxmr7.png"
+                    alt="Icono de papelera"
+                    onClick={handleDelete}
+                  />
+                </div>
+              </>
+            )}
           </div>
         )}
         <div className="details-extra-info-container">
