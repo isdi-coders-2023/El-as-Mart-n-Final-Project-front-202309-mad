@@ -2,6 +2,7 @@ import {
   createClothingItemThunk,
   deleteClothingItemThunk,
   loadClothesThunk,
+  updateClothingItemThunk,
 } from './clothes.thunk';
 import { ClothesRepo } from '../../services/clothes/api.repo.clothes.ts';
 import { appStore } from '../../store/store.ts';
@@ -12,6 +13,7 @@ describe('Given a scenario where...', () => {
       repo: {
         getClothes: jest.fn().mockReturnValue([]),
         createClothingItem: jest.fn().mockReturnValue({}),
+        updateClothingItem: jest.fn().mockResolvedValue({}),
         deleteClothingItem: jest.fn().mockResolvedValue('1'),
       } as unknown as ClothesRepo,
     };
@@ -30,6 +32,23 @@ describe('Given a scenario where...', () => {
       );
       expect(data.repo.createClothingItem).toHaveBeenCalledWith(
         newClothingItem
+      );
+    });
+    test('Then it should dispatch updateClothingItemThunk and update a clothing item', async () => {
+      const data = { ...mockClothesRepo } as { repo: ClothesRepo };
+      const idToUpdate = '1';
+      const updateClothingItem = {} as FormData;
+
+      await appStore.dispatch(
+        updateClothingItemThunk({
+          repo: data.repo,
+          id: idToUpdate,
+          updateClothingItem,
+        })
+      );
+      expect(data.repo.updateClothingItem).toHaveBeenCalledWith(
+        idToUpdate,
+        updateClothingItem
       );
     });
     test('Then it should dispatch deleteClothingItemThunk and delete a clothing item', async () => {
