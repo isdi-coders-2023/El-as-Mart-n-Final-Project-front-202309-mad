@@ -130,4 +130,28 @@ describe('Given AppRoutes component', () => {
       expect(element).toBeInTheDocument();
     });
   });
+  describe('When we navigate to update page', () => {
+    const MockedUpdateClothingItemComponent = jest
+      .fn()
+      .mockReturnValue(<h1>Editar Prenda</h1>);
+    jest.mock(
+      '../../pages/update.clothingItem/update.clothingItem',
+      () => MockedUpdateClothingItemComponent
+    );
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/update']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Editar Prenda');
+    });
+    test('Then the UpdateClothingItem component should been called', () => {
+      expect(MockedUpdateClothingItemComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
 });
