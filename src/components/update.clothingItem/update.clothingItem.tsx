@@ -32,6 +32,7 @@ export function UpdateClothingItem() {
           onSubmit={handleUpdateClothingItem}
           className="update-form"
           aria-label="form"
+          data-testid="form-id"
         >
           <input type="text" name="name" placeholder="Nombre" />
           <input type="text" name="size" placeholder="Talla" />
