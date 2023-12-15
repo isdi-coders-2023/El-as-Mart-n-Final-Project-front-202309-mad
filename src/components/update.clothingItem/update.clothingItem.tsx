@@ -47,21 +47,21 @@ export function UpdateClothingItem() {
           placeholder="Ancho de la prenda"
         />
         <input type="text" name="tares" placeholder="Taras" />
-        <label className="custom-file-upload">
+        <label className="update-custom-file-upload">
           <input
             type="file"
             name="clothingItemFrontImg"
             id="clothingItemFrontImg"
           />
-          Imagen frontal
+          Actualizar imagen frontal
         </label>
-        <label className="custom-file-upload">
+        <label className="update-custom-file-upload">
           <input
             type="file"
             name="clothingItemBackImg"
             id="clothingItemBackImg"
           />
-          Imagen trasera
+          Actualizar imagen trasera
         </label>
         <div className="update-buttons-container">
           <button type="submit">EDITAR PRENDA</button>
