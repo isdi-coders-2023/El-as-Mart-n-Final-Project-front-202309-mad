@@ -58,6 +58,28 @@ describe('Given clothesReducer', () => {
       expect(result.clothes).toStrictEqual([mockClothingItem]);
     });
   });
+  describe('When clothes/update/fulfilled action is dispacth', () => {
+    test('Then the updated ClothingItem should replace the existing one in the state', () => {
+      const mockClothingItem = {
+        id: '1',
+        name: 'NameTest',
+      } as unknown as ClothingItem;
+      const updatedClothingItem = {
+        id: '1',
+        name: 'UpdatedName',
+      } as unknown as ClothingItem;
+      const action = {
+        type: 'update/fulfilled',
+        payload: updatedClothingItem,
+      };
+      const state: ClothesState = {
+        clothes: [mockClothingItem],
+      } as ClothesState;
+      const result = clothesReducer(state, action);
+
+      expect(result.clothes).toStrictEqual([updatedClothingItem]);
+    });
+  });
   describe('When clothes/delete/fulfilled action is dispacth', () => {
     test('Then the clothingItem should be removed froms the state', () => {
       const mockClothingItem = {
