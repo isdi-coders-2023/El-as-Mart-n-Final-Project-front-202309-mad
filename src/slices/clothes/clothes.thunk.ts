@@ -48,3 +48,15 @@ export const deleteClothingItemThunk = createAsyncThunk<
   await repo.deleteClothingItem(id);
   return id;
 });
+
+export const filterClothesThunk = createAsyncThunk(
+  'filter',
+  async ({ repo, query }: { repo: ClothesRepo; query: string }) => {
+    const allClothes = await repo.filterClothes(query);
+    if (query === '') {
+      return allClothes;
+    } else {
+      return allClothes.filter((skin) => skin.size === query);
+    }
+  }
+);

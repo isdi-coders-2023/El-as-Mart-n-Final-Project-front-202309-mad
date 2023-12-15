@@ -53,4 +53,11 @@ export class ClothesRepo {
     if (!response.ok)
       throw new Error(response.status + ' ' + response.statusText);
   }
+
+  async filterClothes(query: string): Promise<ClothingItem[]> {
+    const response = await fetch(`${this.apiUrl}/search?size=${query}`);
+    if (!response.ok)
+      throw new Error(response.status + ' ' + response.statusText);
+    return response.json();
+  }
 }
