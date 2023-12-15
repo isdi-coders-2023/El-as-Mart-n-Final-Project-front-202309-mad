@@ -25,8 +25,17 @@ describe('Given ClothesRepo class', () => {
       expect(jsonMock).toHaveBeenCalled();
       expect(result).toStrictEqual(expected);
     });
+    test('Then method updateClothingItem should...', async () => {
+      const mockId = '1';
+      const mockFormData = {} as FormData;
+      const expected = [] as ClothingItem[];
+      const result = await repo.updateClothingItem(mockId, mockFormData);
+      expect(jsonMock).toHaveBeenCalled();
+      expect(result).toStrictEqual(expected);
+    });
   });
   describe('When we instantiate it and response is bad', () => {
+    const mockId = '1';
     const mockFormData = {} as FormData;
     beforeEach(() => {
       global.fetch = jest.fn().mockResolvedValueOnce({
@@ -40,6 +49,9 @@ describe('Given ClothesRepo class', () => {
     });
     test('Then method createClothingItem should throw an error', async () => {
       expect(repo.createClothingItem(mockFormData)).rejects.toThrow();
+    });
+    test('Then method updateClothingItem should throw an error', async () => {
+      expect(repo.updateClothingItem(mockId, mockFormData)).rejects.toThrow();
     });
     test('Then deleteClothingItemshould throw an error', async () => {
       const clothingItemId = '1';
