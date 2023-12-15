@@ -23,6 +23,21 @@ export const createClothingItemThunk = createAsyncThunk<ClothingItem, Params>(
   }
 );
 
+export const updateClothingItemThunk = createAsyncThunk<
+  ClothingItem,
+  {
+    repo: ClothesRepo;
+    id: ClothingItem['id'];
+    updateClothingItem: FormData;
+  }
+>('update', async ({ repo, id, updateClothingItem }) => {
+  const finalClothingItem = await repo.updateClothingItem(
+    id,
+    updateClothingItem
+  );
+  return finalClothingItem;
+});
+
 export const deleteClothingItemThunk = createAsyncThunk<
   ClothingItem['id'],
   {

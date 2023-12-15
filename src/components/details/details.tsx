@@ -3,7 +3,7 @@ import { makeImageURL } from '../../services/images';
 import { SetStateAction, useState } from 'react';
 import { useClothes } from '../../hooks/clothes/use.clothes';
 import { useUsers } from '../../hooks/users/use.users';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Details() {
   const { currentClothingItem, deleteClothingItem } = useClothes();
@@ -193,12 +193,17 @@ export function Details() {
                 </div>
               ) : (
                 <>
-                  <div className="admin-edit-button">
-                    <img
-                      src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
-                      alt="Icono de editar"
-                    />
-                  </div>
+                  <Link
+                    to={'/update/'}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <div className="admin-edit-button">
+                      <img
+                        src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
+                        alt="Icono de editar"
+                      />
+                    </div>
+                  </Link>
                   <div className="admin-delete-button">
                     <img
                       role="button"

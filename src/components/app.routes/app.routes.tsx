@@ -9,6 +9,9 @@ const Details = lazy(() => import('../../pages/details/details'));
 const CreateClothingItem = lazy(
   () => import('../../pages/create.clothingItem/create.clothingItem')
 );
+const UpdateClothingItem = lazy(
+  () => import('../../pages/update.clothingItem/update.clothingItem')
+);
 
 export function AppRoutes() {
   return (
@@ -24,6 +27,10 @@ export function AppRoutes() {
           <Route
             path="/create"
             element={<CreateClothingItem></CreateClothingItem>}
+          ></Route>
+          <Route
+            path="/update"
+            element={<UpdateClothingItem></UpdateClothingItem>}
           ></Route>
         </Routes>
       </Suspense>

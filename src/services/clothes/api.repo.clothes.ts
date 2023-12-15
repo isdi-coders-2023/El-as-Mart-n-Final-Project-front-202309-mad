@@ -24,6 +24,24 @@ export class ClothesRepo {
       throw new Error(response.status + ' ' + response.statusText);
     return response.json();
   }
+
+  async updateClothingItem(
+    id: string,
+    updatedClothingItem: FormData
+  ): Promise<ClothingItem> {
+    const finalUrl = `${this.apiUrl}/${id}`;
+    const response = await fetch(finalUrl, {
+      method: 'PATCH',
+      body: updatedClothingItem,
+      headers: {
+        Authorization: 'Bearer ' + this.token,
+      },
+    });
+    if (!response.ok)
+      throw new Error(response.status + ' ' + response.statusText);
+    return response.json();
+  }
+
   async deleteClothingItem(id: ClothingItem['id']): Promise<void> {
     const finalUrl = `${this.apiUrl}/${id}`;
     const response = await fetch(finalUrl, {

@@ -7,6 +7,7 @@ import {
   createClothingItemThunk,
   deleteClothingItemThunk,
   loadClothesThunk,
+  updateClothingItemThunk,
 } from '../../slices/clothes/clothes.thunk.ts';
 import { setCurrentClothingItem } from '../../slices/clothes/clothes.slice.tsx';
 
@@ -34,6 +35,13 @@ export function useClothes() {
     );
   };
 
+  const updateClothingItem = async (
+    id: ClothingItem['id'],
+    updateClothingItem: FormData
+  ) => {
+    dispatch(updateClothingItemThunk({ id, repo, updateClothingItem }));
+  };
+
   const deleteClothingItem = async (id: ClothingItem['id']) => {
     dispatch(
       deleteClothingItemThunk({
@@ -50,6 +58,7 @@ export function useClothes() {
   return {
     loadClothes,
     createClothingItem,
+    updateClothingItem,
     deleteClothingItem,
     handleDetailsPage,
     currentClothingItem,

@@ -1,0 +1,56 @@
+@import '../../vars.scss';
+
+.update-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-family: $contrail-one-font;
+    font-size: 3rem;
+  }
+  .update-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+      font-family: $contrail-one-font;
+      width: 21.875rem;
+      padding: 0.75rem 1.25rem;
+      margin: 0.5rem 0.5rem;
+      display: inline-block;
+      border: 0.063rem solid #000000;
+    }
+    input[type='file'] {
+      display: none;
+    }
+    .custom-file-upload {
+      margin: 0.5rem 0.5rem;
+      background-color: white;
+      font-family: $contrail-one-font;
+      font-size: small;
+      border: 1px solid #000000;
+      display: inline-block;
+      padding: 0.75rem 8.3701rem;
+      color: #79808b;
+      cursor: pointer;
+    }
+  }
+  .update-buttons-container {
+    text-align: center;
+    button {
+      font-family: $inter-font;
+      background-color: $dark-grey;
+      color: white;
+      width: 21.875rem;
+      padding: 0.75rem 1.25rem;
+      margin: 0.5rem 0.5rem;
+      display: inline-block;
+      border: 0.063rem solid #000000;
+      cursor: pointer;
+    }
+    p {
+      font-family: $contrail-one-font;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import {
   loadClothesThunk,
   createClothingItemThunk,
   deleteClothingItemThunk,
+  updateClothingItemThunk,
 } from './clothes.thunk';
 
 export type ClothesState = {
@@ -52,6 +53,15 @@ const clothesSlice = createSlice({
       createClothingItemThunk.fulfilled,
       (state: ClothesState, { payload }: PayloadAction<ClothingItem>) => {
         state.clothes.push(payload);
+        return state;
+      }
+    );
+    builder.addCase(
+      updateClothingItemThunk.fulfilled,
+      (state: ClothesState, { payload }: PayloadAction<ClothingItem>) => {
+        state.clothes[
+          state.clothes.findIndex((item) => item.id === payload.id)
+        ] = payload;
         return state;
       }
     );

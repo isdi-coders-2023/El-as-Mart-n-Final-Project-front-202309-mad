@@ -59,7 +59,7 @@ describe('Given clothesReducer', () => {
     });
   });
   describe('When clothes/delete/fulfilled action is dispacth', () => {
-    test('Then the skin should be removed froms the state', () => {
+    test('Then the clothingItem should be removed froms the state', () => {
       const mockClothingItem = {
         id: '1',
         name: 'NameTest',
