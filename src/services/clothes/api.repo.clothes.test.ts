@@ -33,8 +33,16 @@ describe('Given ClothesRepo class', () => {
       expect(jsonMock).toHaveBeenCalled();
       expect(result).toStrictEqual(expected);
     });
+    test('Then method filterClothes should...', async () => {
+      const mockQuery = 'M';
+      const expected: ClothingItem[] = [];
+      const result = await repo.filterClothes(mockQuery);
+      expect(jsonMock).toHaveBeenCalled();
+      expect(result).toStrictEqual(expected);
+    });
   });
   describe('When we instantiate it and response is bad', () => {
+    const mockQuery = 'M';
     const mockId = '1';
     const mockFormData = {} as FormData;
     beforeEach(() => {
@@ -44,7 +52,7 @@ describe('Given ClothesRepo class', () => {
         statusText: 'Not Found',
       });
     });
-    test('Then method getUsers should throw an error', async () => {
+    test('Then method getClothes should throw an error', async () => {
       expect(repo.getClothes()).rejects.toThrow();
     });
     test('Then method createClothingItem should throw an error', async () => {
@@ -56,6 +64,9 @@ describe('Given ClothesRepo class', () => {
     test('Then deleteClothingItemshould throw an error', async () => {
       const clothingItemId = '1';
       await expect(repo.deleteClothingItem(clothingItemId)).rejects.toThrow();
+    });
+    test('Then method filterClothes should throw an error', async () => {
+      expect(repo.filterClothes(mockQuery)).rejects.toThrow();
     });
   });
 });
