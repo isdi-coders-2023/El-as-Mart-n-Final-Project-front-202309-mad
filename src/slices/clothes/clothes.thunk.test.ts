@@ -1,6 +1,7 @@
 import {
   createClothingItemThunk,
   deleteClothingItemThunk,
+  filterClothesThunk,
   loadClothesThunk,
   updateClothingItemThunk,
 } from './clothes.thunk';
@@ -15,6 +16,7 @@ describe('Given a scenario where...', () => {
         createClothingItem: jest.fn().mockReturnValue({}),
         updateClothingItem: jest.fn().mockResolvedValue({}),
         deleteClothingItem: jest.fn().mockResolvedValue('1'),
+        filterClothes: jest.fn().mockReturnValue([]),
       } as unknown as ClothesRepo,
     };
 
@@ -59,6 +61,18 @@ describe('Given a scenario where...', () => {
       );
 
       expect(data.repo.deleteClothingItem).toHaveBeenCalledWith(idToDelete);
+    });
+    test('Then it should dispatch filterClothesThunk and update clothes store with filtered items', async () => {
+      const query = 'someSize';
+      const data = { ...mockClothesRepo } as { repo: ClothesRepo };
+      await appStore.dispatch(filterClothesThunk({ repo: data.repo, query }));
+      expect(data.repo.filterClothes).toHaveBeenCalled();
+    });
+    test('Then it should dispatch filterClothesThunk and return the entire list of items when the query is empty', async () => {
+      const query = '';
+      const data = { ...mockClothesRepo } as { repo: ClothesRepo };
+      await appStore.dispatch(filterClothesThunk({ repo: data.repo, query }));
+      expect(data.repo.filterClothes).toHaveBeenCalled();
     });
   });
 });
