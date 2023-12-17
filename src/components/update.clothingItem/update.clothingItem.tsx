@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 export function UpdateClothingItem() {
   const navigate = useNavigate();
-
   const { currentClothingItem, updateClothingItem } = useClothes();
-
   const [clothingItem, setClothingItem] = useState(currentClothingItem);
+  const [selectedUpdateFrontFileName, setSelectedUpdateFrontFileName] =
+    useState('');
+  const [selectedUpdateBackFileName, setSelectedUpdateBackFileName] =
+    useState('');
 
   useEffect(() => {
     setClothingItem(currentClothingItem);
@@ -20,6 +22,22 @@ export function UpdateClothingItem() {
     const formData = new FormData(form);
     updateClothingItem(clothingItem!.id, formData);
     navigate('/home');
+  };
+
+  const handleUpdateFrontFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const fileInput = event.target;
+    const files = fileInput.files;
+    setSelectedUpdateFrontFileName(files![0].name);
+  };
+
+  const handleUpdateBackFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const fileInput = event.target;
+    const files = fileInput.files;
+    setSelectedUpdateBackFileName(files![0].name);
   };
 
   return (
@@ -47,21 +65,49 @@ export function UpdateClothingItem() {
           placeholder="Ancho de la prenda"
         />
         <input type="text" name="tares" placeholder="Taras" />
-        <label className="update-custom-file-upload">
+        <label className="custom-update-front-file-upload">
           <input
             type="file"
             name="clothingItemFrontImg"
             id="clothingItemFrontImg"
+            onChange={handleUpdateFrontFileChange}
+            data-testid="update-file-front-input"
           />
-          Actualizar imagen frontal
+          {selectedUpdateFrontFileName ? (
+            <span>{selectedUpdateFrontFileName}</span>
+          ) : (
+            <div className="update-file-front-input-text">
+              <div className="select-upload-front-text">Imagen frontal</div>
+              <div>
+                <img
+                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
+                  alt="Upload icon"
+                />
+              </div>
+            </div>
+          )}
         </label>
-        <label className="update-custom-file-upload">
+        <label className="custom-update-back-file-upload">
           <input
             type="file"
             name="clothingItemBackImg"
             id="clothingItemBackImg"
+            onChange={handleUpdateBackFileChange}
+            data-testid="update-file-back-input"
           />
-          Actualizar imagen trasera
+          {selectedUpdateBackFileName ? (
+            <span>{selectedUpdateBackFileName}</span>
+          ) : (
+            <div className="update-file-back-input-text">
+              <div className="select-upload-back-text">Imagen trasera</div>
+              <div>
+                <img
+                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
+                  alt="Upload icon"
+                />
+              </div>
+            </div>
+          )}
         </label>
         <div className="update-buttons-container">
           <button type="submit">EDITAR PRENDA</button>
