@@ -75,7 +75,15 @@ export function Register() {
             {selectedFileName ? (
               <span>{selectedFileName}</span>
             ) : (
-              <span>Selecciona tu avatar</span>
+              <div className="file-input-text">
+                <div className="select-avatar-text">Selecciona tu avatar</div>
+                <div>
+                  <img
+                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
+                    alt="Upload icon"
+                  />
+                </div>
+              </div>
             )}
           </label>
           <div className="register-buttons-container">

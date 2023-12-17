@@ -28,14 +28,24 @@
       text-align: center;
       margin: 0.5rem 0.5rem;
       width: 21.875rem;
+      height: 2.688rem;
       background-color: white;
       font-family: $contrail-one-font;
       font-size: small;
       border: 1px solid #000000;
-      display: inline-block;
+      display: flex;
+      justify-content: center;
       padding: 0.75rem 7.504rem;
       color: #79808b;
+      padding-inline: 0rem;
+      gap: 2rem;
       cursor: pointer;
+      .file-input-text {
+        width: 8.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
   .register-buttons-container {
