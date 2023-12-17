@@ -76,17 +76,17 @@ describe('Given Details Component', () => {
       );
     });
     test('Then should render edit and delete buttons', () => {
-      const deleteButton = screen.getByAltText('Icono de papelera');
+      const deleteButton = screen.getByText('🗑️');
       expect(deleteButton).toBeInTheDocument();
-      const editButton = screen.getByAltText('Icono de editar');
+      const editButton = screen.getByText('✏️');
       expect(editButton).toBeInTheDocument();
     });
     test('Then delete button should call handleDelete when is clicked', async () => {
-      let deleteButton = screen.getByAltText('Icono de papelera');
+      let deleteButton = screen.getByText('🗑️');
       await userEvent.click(deleteButton);
       const confirmButton = screen.getByTestId('confirm-button');
       await userEvent.click(confirmButton);
-      deleteButton = screen.getByAltText('Icono de papelera');
+      deleteButton = screen.getByText('🗑️');
       await userEvent.click(deleteButton);
       const negateButton = screen.getByTestId('negate-button');
       await userEvent.click(negateButton);

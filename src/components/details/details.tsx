@@ -175,20 +175,18 @@ export function Details() {
                     <p>⚠️</p>
                   </div>
                   <div className="confirmation-buttons">
-                    <p
-                      role="button"
+                    <button
                       onClick={() => confirmDelete(currentClothingItem!.id)}
                       data-testid="confirm-button"
                     >
                       👍
-                    </p>
-                    <p
-                      role="button"
+                    </button>
+                    <button
                       onClick={() => cancelDelete()}
                       data-testid="negate-button"
                     >
                       👎
-                    </p>
+                    </button>
                   </div>
                 </div>
               ) : (
@@ -198,19 +196,11 @@ export function Details() {
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <div className="admin-edit-button">
-                      <img
-                        src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489800/elPerroVintage/z9d9zvs8n3iv9e3zvbzj.png"
-                        alt="Icono de editar"
-                      />
+                      <button>✏️</button>
                     </div>
                   </Link>
                   <div className="admin-delete-button">
-                    <img
-                      role="button"
-                      src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_40/v1702489791/elPerroVintage/fobbisl877yv6qwhxmr7.png"
-                      alt="Icono de papelera"
-                      onClick={handleDelete}
-                    />
+                    <button onClick={handleDelete}>🗑️</button>
                   </div>
                 </>
               )}
