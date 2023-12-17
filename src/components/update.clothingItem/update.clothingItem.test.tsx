@@ -6,6 +6,7 @@ import { appStore } from '../../store/store';
 import { UpdateClothingItem } from './update.clothingItem';
 import { useClothes } from '../../hooks/clothes/use.clothes';
 import { ClothingItem } from '../../entities/clothingItem';
+import '@testing-library/jest-dom';
 
 jest.mock('../../hooks/clothes/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({
@@ -35,6 +36,30 @@ describe('Given UpdateClothingItem Component', () => {
       await userEvent.type(nameInput, 'Updated TestClothingItem');
       fireEvent.submit(form);
       expect(useClothes().updateClothingItem).toHaveBeenCalled();
+    });
+    test('Then it updates the selectedUpdateFrontFileName state', async () => {
+      const fileUploadFrontInput = screen.getByTestId(
+        'update-file-front-input'
+      );
+      expect(fileUploadFrontInput).toBeInTheDocument();
+      const fileUploadFrontName = 'test-file.png';
+      await userEvent.upload(
+        fileUploadFrontInput,
+        new File(['(⌐□_□)'], fileUploadFrontName, { type: 'image.png' })
+      );
+      const selectedFileName = screen.getByText(fileUploadFrontName);
+      expect(selectedFileName).toBeInTheDocument();
+    });
+    test('Then it updates the selectedUpdateBackFileName state', async () => {
+      const fileUploadBackInput = screen.getByTestId('update-file-back-input');
+      expect(fileUploadBackInput).toBeInTheDocument();
+      const fileUploadBackName = 'test-file.png';
+      await userEvent.upload(
+        fileUploadBackInput,
+        new File(['(⌐□_□)'], fileUploadBackName, { type: 'image.png' })
+      );
+      const selectedFileName = screen.getByText(fileUploadBackName);
+      expect(selectedFileName).toBeInTheDocument();
     });
   });
 });
