@@ -11,8 +11,13 @@ import '@testing-library/jest-dom';
 jest.mock('../../hooks/clothes/use.clothes', () => ({
   useClothes: jest.fn().mockReturnValue({
     currentClothingItem: {
-      id: '1',
-      name: 'TestClothingItem',
+      id: '',
+      name: '',
+      size: '',
+      price: '',
+      clothingItemHeight: '',
+      clothingItemWidth: '',
+      tares: '',
     } as ClothingItem,
     updateClothingItem: jest.fn(),
   }),
@@ -60,6 +65,17 @@ describe('Given UpdateClothingItem Component', () => {
       );
       const selectedFileName = screen.getByText(fileUploadBackName);
       expect(selectedFileName).toBeInTheDocument();
+    });
+    test('Then it calls the createClothingItem function with the correct values', async () => {
+      const form = screen.getByRole('form');
+      expect(form).toBeInTheDocument();
+      const input = screen.getAllByRole('textbox');
+      await userEvent.type(input[0], 'NameTest');
+      await userEvent.type(input[1], 'SizeTest');
+      await userEvent.type(input[2], 'PriceTest');
+      await userEvent.type(input[3], 'HeightTest');
+      await userEvent.type(input[4], 'WidthTest');
+      await userEvent.type(input[5], 'TaresTest');
     });
   });
 });

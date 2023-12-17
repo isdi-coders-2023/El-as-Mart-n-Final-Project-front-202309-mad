@@ -6,16 +6,31 @@ import { useNavigate } from 'react-router-dom';
 export function UpdateClothingItem() {
   const navigate = useNavigate();
   const { currentClothingItem, updateClothingItem } = useClothes();
-  const [clothingItem, setClothingItem] = useState(currentClothingItem);
+  const [clothingItem, setClothingItem] = useState({
+    id: currentClothingItem!.id || '',
+    name: currentClothingItem!.name || '',
+    size: currentClothingItem!.size || '',
+    price: currentClothingItem!.price || '',
+    clothingItemHeight: currentClothingItem!.clothingItemHeight || '',
+    clothingItemWidth: currentClothingItem!.clothingItemWidth || '',
+    tares: currentClothingItem!.tares || '',
+  });
   const [selectedUpdateFrontFileName, setSelectedUpdateFrontFileName] =
     useState('');
   const [selectedUpdateBackFileName, setSelectedUpdateBackFileName] =
     useState('');
 
   useEffect(() => {
-    setClothingItem(currentClothingItem);
+    setClothingItem({
+      id: currentClothingItem!.id || '',
+      name: currentClothingItem!.name || '',
+      size: currentClothingItem!.size || '',
+      price: currentClothingItem!.price || '',
+      clothingItemHeight: currentClothingItem!.clothingItemHeight || '',
+      clothingItemWidth: currentClothingItem!.clothingItemWidth || '',
+      tares: currentClothingItem!.tares || '',
+    });
   }, [currentClothingItem]);
-
   const handleUpdateClothingItem = (event: SyntheticEvent) => {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
@@ -51,20 +66,66 @@ export function UpdateClothingItem() {
         aria-label="form"
         data-testid="form-id"
       >
-        <input type="text" name="name" placeholder="Nombre" />
-        <input type="text" name="size" placeholder="Talla" />
-        <input type="text" name="price" placeholder="Precio" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombre"
+          value={clothingItem.name}
+          onChange={(e) =>
+            setClothingItem({ ...clothingItem, name: e.target.value })
+          }
+        />
+        <input
+          type="text"
+          name="size"
+          placeholder="Talla"
+          value={clothingItem.size}
+          onChange={(e) =>
+            setClothingItem({ ...clothingItem, size: e.target.value })
+          }
+        />
+        <input
+          type="text"
+          name="price"
+          placeholder="Precio"
+          value={clothingItem.price}
+          onChange={(e) =>
+            setClothingItem({ ...clothingItem, price: e.target.value })
+          }
+        />
         <input
           type="text"
           name="clothingItemHeight"
           placeholder="Largo de la prenda"
+          value={clothingItem.clothingItemHeight}
+          onChange={(e) =>
+            setClothingItem({
+              ...clothingItem,
+              clothingItemHeight: e.target.value,
+            })
+          }
         />
         <input
           type="text"
           name="clothingItemWidth"
           placeholder="Ancho de la prenda"
+          value={clothingItem.clothingItemWidth}
+          onChange={(e) =>
+            setClothingItem({
+              ...clothingItem,
+              clothingItemWidth: e.target.value,
+            })
+          }
         />
-        <input type="text" name="tares" placeholder="Taras" />
+        <input
+          type="text"
+          name="tares"
+          placeholder="Taras"
+          value={clothingItem.tares}
+          onChange={(e) =>
+            setClothingItem({ ...clothingItem, tares: e.target.value })
+          }
+        />
         <label className="custom-update-front-file-upload">
           <input
             type="file"
