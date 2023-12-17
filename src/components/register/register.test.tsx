@@ -13,6 +13,10 @@ jest.mock('../../hooks/users/use.users', () => ({
   }),
 }));
 
+jest.mock('sweetalert2', () => ({
+  fire: jest.fn().mockResolvedValue({}),
+}));
+
 describe('Given Register Component', () => {
   beforeEach(() => {
     render(
