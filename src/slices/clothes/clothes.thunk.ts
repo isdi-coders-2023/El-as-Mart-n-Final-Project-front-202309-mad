@@ -56,7 +56,7 @@ export const filterClothesThunk = createAsyncThunk(
     if (query === '') {
       return allClothes;
     } else {
-      return allClothes.filter((skin) => skin.size === query);
+      return allClothes.filter((clothingItem) => clothingItem.size === query);
     }
   }
 );
