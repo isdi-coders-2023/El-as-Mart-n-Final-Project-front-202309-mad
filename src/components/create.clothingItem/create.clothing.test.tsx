@@ -32,5 +32,27 @@ describe('Given CreateClothingItem Component', () => {
       await fireEvent.submit(form);
       expect(useClothes().createClothingItem).toHaveBeenCalled();
     });
+    test('Then it updates the selectedFrontFileName state', async () => {
+      const fileFrontInput = screen.getByTestId('file-front-input');
+      expect(fileFrontInput).toBeInTheDocument();
+      const fileFrontName = 'test-file.png';
+      await userEvent.upload(
+        fileFrontInput,
+        new File(['(⌐□_□)'], fileFrontName, { type: 'image.png' })
+      );
+      const selectedFileName = screen.getByText(fileFrontName);
+      expect(selectedFileName).toBeInTheDocument();
+    });
+    test('Then it updates the selectedBackFileName state', async () => {
+      const fileBackInput = screen.getByTestId('file-back-input');
+      expect(fileBackInput).toBeInTheDocument();
+      const fileBackName = 'test-file.png';
+      await userEvent.upload(
+        fileBackInput,
+        new File(['(⌐□_□)'], fileBackName, { type: 'image.png' })
+      );
+      const selectedFileName = screen.getByText(fileBackName);
+      expect(selectedFileName).toBeInTheDocument();
+    });
   });
 });

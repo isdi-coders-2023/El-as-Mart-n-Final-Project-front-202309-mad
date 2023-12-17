@@ -61,7 +61,7 @@ export function CreateClothingItem() {
             name="clothingItemFrontImg"
             id="clothingItemFrontImg"
             onChange={handleFrontFileChange}
-            data-testid="file-input"
+            data-testid="file-front-input"
           />
           {selectedFrontFileName ? (
             <span>{selectedFrontFileName}</span>
@@ -83,7 +83,7 @@ export function CreateClothingItem() {
             name="clothingItemBackImg"
             id="clothingItemBackImg"
             onChange={handleBackFileChange}
-            data-testid="file-input"
+            data-testid="file-back-input"
           />
           {selectedBackFileName ? (
             <span>{selectedBackFileName}</span>

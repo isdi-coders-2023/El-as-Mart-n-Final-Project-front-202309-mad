@@ -39,7 +39,6 @@ describe('Given Register Component', () => {
     test('Then it updates the selectedFileName state', async () => {
       const fileInput = screen.getByTestId('file-input');
       expect(fileInput).toBeInTheDocument();
-
       const fileName = 'test-file.png';
       await userEvent.upload(
         fileInput,
