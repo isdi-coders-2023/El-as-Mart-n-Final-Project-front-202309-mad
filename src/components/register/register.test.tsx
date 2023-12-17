@@ -36,5 +36,17 @@ describe('Given Register Component', () => {
       await fireEvent.submit(form);
       expect(useUsers().register).toHaveBeenCalled();
     });
+    test('Then it updates the selectedFileName state', async () => {
+      const fileInput = screen.getByTestId('file-input');
+      expect(fileInput).toBeInTheDocument();
+
+      const fileName = 'test-file.png';
+      await userEvent.upload(
+        fileInput,
+        new File(['(⌐□_□)'], fileName, { type: 'image.png' })
+      );
+      const selectedFileName = screen.getByText(fileName);
+      expect(selectedFileName).toBeInTheDocument();
+    });
   });
 });

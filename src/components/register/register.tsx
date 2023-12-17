@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export function Register() {
   const { register } = useUsers();
   const [isRegistrationSuccessful, setRegistrationSuccessful] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event: SyntheticEvent) => {
@@ -17,19 +18,11 @@ export function Register() {
     setRegistrationSuccessful(true);
   };
 
-  useEffect(() => {
-    if (isRegistrationSuccessful) {
-      Swal.fire({
-        icon: 'success',
-        title: '¡Registro exitoso!',
-        showConfirmButton: false,
-        timer: 1500,
-      }).then(() => {
-        setRegistrationSuccessful(false);
-        navigate('/login/');
-      });
-    }
-  }, [isRegistrationSuccessful]);
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const fileInput = event.target;
+    const files = fileInput.files;
+    setSelectedFileName(files![0].name);
+  };
 
   useEffect(() => {
     if (isRegistrationSuccessful) {
@@ -72,8 +65,18 @@ export function Register() {
             required
           />
           <label className="custom-file-upload">
-            <input type="file" name="avatar" id="avatar" />
-            Selecciona tu avatar
+            <input
+              type="file"
+              name="avatar"
+              id="avatar"
+              onChange={handleFileChange}
+              data-testid="file-input"
+            />
+            {selectedFileName ? (
+              <span>{selectedFileName}</span>
+            ) : (
+              <span>Selecciona tu avatar</span>
+            )}
           </label>
           <div className="register-buttons-container">
             <button type="submit">CREAR CUENTA</button>
