@@ -21,6 +21,16 @@
       display: inline-block;
       border: 0.063rem solid #000000;
     }
+    .password-input-container {
+      display: flex;
+      margin-inline-start: 1.9rem;
+      .toggle-password-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+    }
   }
   .login-buttons-container {
     text-align: center;

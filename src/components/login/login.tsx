@@ -1,11 +1,15 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import { LoginUser } from '../../entities/user';
 import { useUsers } from '../../hooks/users/use.users';
 import './login.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export function Login() {
+  const navigate = useNavigate();
   const [hasLogin, setHasLogin] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const { login } = useUsers();
 
   const handleSubmit = (event: SyntheticEvent) => {
@@ -19,6 +23,21 @@ export function Login() {
     login(loginUser);
     setHasLogin(true);
   };
+
+  useEffect(() => {
+    if (hasLogin) {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Login correcto!',
+        showConfirmButton: false,
+        timer: 1500,
+      }).then(() => {
+        setHasLogin(false);
+        navigate('/home/');
+      });
+    }
+  }, [hasLogin]);
+
   return (
     <>
       <div className="login-form-container">
@@ -32,12 +51,24 @@ export function Login() {
             aria-label="form"
           >
             <input type="email" name="email" placeholder="Email" required />
-            <input
-              type="password"
-              name="passwd"
-              placeholder="Contraseña"
-              required
-            />
+            <div className="password-input-container">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                name="passwd"
+                placeholder="Contraseña"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="toggle-password-button"
+              >
+                <img
+                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702833376/elPerroVintage/esgdaubs95zfrm1ijyrj.png"
+                  alt=""
+                />
+              </button>
+            </div>
             <div className="login-buttons-container">
               <button type="submit">INGRESAR CUENTA</button>
               <Link
@@ -50,18 +81,6 @@ export function Login() {
           </form>
         )}
       </div>
-      {hasLogin && (
-        <div className="correct-login-container">
-          <div className="correct-login-text">
-            <p>🎉LOGIN CORRECTO🎉</p>
-          </div>
-          <div className="correct-login-button">
-            <Link to={'/home/'}>
-              <button type="button">CONTINUAR</button>
-            </Link>
-          </div>
-        </div>
-      )}
     </>
   );
 }
