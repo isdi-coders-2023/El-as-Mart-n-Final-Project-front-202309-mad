@@ -28,7 +28,7 @@ export function Register() {
     if (isRegistrationSuccessful) {
       Swal.fire({
         icon: 'success',
-        title: '¡Registro exitoso!',
+        title: '¡Cuenta creada con éxito!',
         showConfirmButton: false,
         timer: 1500,
       }).then(() => {
