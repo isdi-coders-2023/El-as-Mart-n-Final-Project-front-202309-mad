@@ -36,6 +36,9 @@ header {
       height: 2.5rem;
       width: 2.5rem;
     }
+    img:hover {
+      opacity: 0.8;
+    }
   }
   .user-buttons-container {
     text-align: center;
@@ -43,6 +46,9 @@ header {
       font-family: $contrail-one-font;
       margin: 0;
       color: black;
+    }
+    img:hover {
+      opacity: 0.8;
     }
   }
 }

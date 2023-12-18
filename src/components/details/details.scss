@@ -81,6 +81,7 @@
       justify-content: center;
       margin-block: 0.8rem;
       margin-inline: 1.2rem;
+      cursor: pointer;
       .shopping-cart-text {
         display: flex;
         justify-content: center;
@@ -109,6 +110,9 @@
         }
       }
     }
+    .details-shopping-cart-container:hover {
+      opacity: 0.8;
+    }
     .admin-buttons {
       display: flex;
       justify-content: center;
@@ -120,6 +124,9 @@
         border: none;
         cursor: pointer;
         font-size: 2.5rem;
+      }
+      button:hover {
+        opacity: 0.8;
       }
       .confirmation-dialog {
         .confirmation-text {

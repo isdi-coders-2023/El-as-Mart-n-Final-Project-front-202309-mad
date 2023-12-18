@@ -30,6 +30,9 @@
         cursor: pointer;
         padding: 0;
       }
+      button:hover {
+        opacity: 0.8;
+      }
     }
   }
   .login-buttons-container {
@@ -44,6 +47,9 @@
       display: inline-block;
       border: 0.063rem solid #000000;
       cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.8;
     }
     p {
       font-family: $contrail-one-font;
