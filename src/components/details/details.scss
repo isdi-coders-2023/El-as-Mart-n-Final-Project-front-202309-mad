@@ -159,6 +159,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-inline-start: 2rem;
     .mobile-details-image-container {
       display: none;
     }
@@ -167,6 +168,7 @@
       flex-direction: column;
       align-items: center;
       margin-block-start: 1rem;
+      margin-inline-end: 2rem;
       .desktop-small-details-images-container {
         cursor: pointer;
         .desktop-small-front-img,
@@ -179,6 +181,7 @@
     }
     .desktop-text-container {
       .details-info-container {
+        gap: 0.8rem;
         .details-name-container {
           p {
             font-size: 3rem;

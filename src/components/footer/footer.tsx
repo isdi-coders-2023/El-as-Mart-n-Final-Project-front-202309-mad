@@ -16,16 +16,20 @@ export function Footer() {
         </div>
         <div className="footer-icons-container">
           <div className="vinted-icon-container">
-            <img
-              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897774/elPerroVintage/boerxgp1md4uxikfxdc2.png"
-              alt="Vinted icon"
-            />
+            <Link to={'https://www.vinted.es/member/53837553-elperrovintage'}>
+              <img
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897774/elPerroVintage/boerxgp1md4uxikfxdc2.png"
+                alt="Vinted icon"
+              />
+            </Link>
           </div>
           <div className="instagram-icon-container">
-            <img
-              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897764/elPerroVintage/kpnygadf5ppdrgzzd1by.png"
-              alt="Instagram icon"
-            />
+            <Link to={'https://www.instagram.com/elperrovintage/'}>
+              <img
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897764/elPerroVintage/kpnygadf5ppdrgzzd1by.png"
+                alt="Instagram icon"
+              />
+            </Link>
           </div>
         </div>
         <div className="footer-copy-container">
