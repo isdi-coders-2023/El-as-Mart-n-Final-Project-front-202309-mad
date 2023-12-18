@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './footer.scss';
 
 export function Footer() {
@@ -5,7 +6,12 @@ export function Footer() {
     <footer>
       <div className="footer-container">
         <div className="footer-pages-container">
-          <p>CONÓCENOS</p>
+          <Link
+            to={'/aboutUs/'}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <p>CONÓCENOS</p>
+          </Link>
           <p>GUÍA DE TALLAS</p>
         </div>
         <div className="footer-icons-container">

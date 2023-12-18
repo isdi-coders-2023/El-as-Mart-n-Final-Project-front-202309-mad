@@ -13,6 +13,7 @@ const UpdateClothingItem = lazy(
   () => import('../../pages/update.clothingItem/update.clothingItem')
 );
 const ErrorComponent = lazy(() => import('../../pages/error/error'));
+const AboutUs = lazy(() => import('../../pages/about.us/about.us'));
 
 export function AppRoutes() {
   return (
@@ -34,6 +35,7 @@ export function AppRoutes() {
             path="/update"
             element={<UpdateClothingItem></UpdateClothingItem>}
           ></Route>
+          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
         </Routes>
       </Suspense>
     </main>
