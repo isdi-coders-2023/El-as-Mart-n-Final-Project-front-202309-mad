@@ -39,49 +39,43 @@ export function Login() {
   }, [hasLogin]);
 
   return (
-    <>
-      <div className="login-form-container">
-        <div className="login-form-h2">
-          <h2>INGRESAR</h2>
-        </div>
-        {!hasLogin && (
-          <form
-            onSubmit={handleSubmit}
-            className="login-form"
-            aria-label="form"
-          >
-            <input type="email" name="email" placeholder="Email" required />
-            <div className="password-input-container">
-              <input
-                type={showPassword ? 'text' : 'password'}
-                name="passwd"
-                placeholder="Contraseña"
-                required
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="toggle-password-button"
-                data-testid="show-passwd-button"
-              >
-                <img
-                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702833376/elPerroVintage/esgdaubs95zfrm1ijyrj.png"
-                  alt=""
-                />
-              </button>
-            </div>
-            <div className="login-buttons-container">
-              <button type="submit">INGRESAR CUENTA</button>
-              <Link
-                to={'/register/'}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                <p>¿Aún no tienes cuenta?</p>
-              </Link>
-            </div>
-          </form>
-        )}
+    <div className="login-form-container">
+      <div className="login-form-h2">
+        <h2>INGRESAR</h2>
       </div>
-    </>
+      {!hasLogin && (
+        <form onSubmit={handleSubmit} className="login-form" aria-label="form">
+          <input type="email" name="email" placeholder="Email" required />
+          <div className="password-input-container">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              name="passwd"
+              placeholder="Contraseña"
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="toggle-password-button"
+              data-testid="show-passwd-button"
+            >
+              <img
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702833376/elPerroVintage/esgdaubs95zfrm1ijyrj.png"
+                alt=""
+              />
+            </button>
+          </div>
+          <div className="login-buttons-container">
+            <button type="submit">INGRESAR CUENTA</button>
+            <Link
+              to={'/register/'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <p>¿Aún no tienes cuenta?</p>
+            </Link>
+          </div>
+        </form>
+      )}
+    </div>
   );
 }

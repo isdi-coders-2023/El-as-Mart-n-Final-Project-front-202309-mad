@@ -39,64 +39,58 @@ export function Register() {
   }, [isRegistrationSuccessful]);
 
   return (
-    <>
-      <div className="register-form-container">
-        <div className="register-form-h2">
-          <h2>CREAR CUENTA</h2>
-        </div>
-        <form
-          onSubmit={handleSubmit}
-          className="register-form"
-          aria-label="form"
-        >
-          <input type="text" name="name" placeholder="Nombre" />
-          <input type="text" name="surname" placeholder="Apellidos" />
-          <input type="number" name="age" placeholder="Edad" />
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            required
-          />
-          <input
-            type="password"
-            name="passwd"
-            placeholder="Contraseña"
-            required
-          />
-          <label className="custom-file-upload">
-            <input
-              type="file"
-              name="avatar"
-              id="avatar"
-              onChange={handleFileChange}
-              data-testid="file-input"
-            />
-            {selectedFileName ? (
-              <span>{selectedFileName}</span>
-            ) : (
-              <div className="file-input-text">
-                <div className="select-avatar-text">Selecciona tu avatar</div>
-                <div>
-                  <img
-                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
-                    alt="Upload icon"
-                  />
-                </div>
-              </div>
-            )}
-          </label>
-          <div className="register-buttons-container">
-            <button type="submit">CREAR CUENTA</button>
-            <Link
-              to={'/login/'}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <p>¿Ya estás registrado?</p>
-            </Link>
-          </div>
-        </form>
+    <div className="register-form-container">
+      <div className="register-form-h2">
+        <h2>CREAR CUENTA</h2>
       </div>
-    </>
+      <form onSubmit={handleSubmit} className="register-form" aria-label="form">
+        <input type="text" name="name" placeholder="Nombre" />
+        <input type="text" name="surname" placeholder="Apellidos" />
+        <input type="number" name="age" placeholder="Edad" />
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo electrónico"
+          required
+        />
+        <input
+          type="password"
+          name="passwd"
+          placeholder="Contraseña"
+          required
+        />
+        <label className="custom-file-upload">
+          <input
+            type="file"
+            name="avatar"
+            id="avatar"
+            onChange={handleFileChange}
+            data-testid="file-input"
+          />
+          {selectedFileName ? (
+            <span>{selectedFileName}</span>
+          ) : (
+            <div className="file-input-text">
+              <div className="select-avatar-text">Selecciona tu avatar</div>
+              <div>
+                <img
+                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
+                  alt="Upload icon"
+                />
+              </div>
+            </div>
+          )}
+        </label>
+        <div className="register-buttons-container">
+          <button type="submit">CREAR CUENTA</button>
+          <Link
+            to={'/login/'}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <p>¿Ya estás registrado?</p>
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 }
