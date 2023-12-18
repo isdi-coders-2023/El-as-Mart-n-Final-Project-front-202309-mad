@@ -31,6 +31,7 @@ export function Login() {
         title: '¡Login correcto!',
         showConfirmButton: false,
         timer: 1500,
+        width: 350,
       }).then(() => {
         setHasLogin(false);
         navigate('/home/');

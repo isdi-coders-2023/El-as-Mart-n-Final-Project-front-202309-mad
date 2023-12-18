@@ -31,6 +31,7 @@ export function Register() {
         title: '¡Cuenta creada con éxito!',
         showConfirmButton: false,
         timer: 1500,
+        width: 350,
       }).then(() => {
         setRegistrationSuccessful(false);
         navigate('/login/');
