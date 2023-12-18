@@ -22,7 +22,10 @@ describe('Given Card component', () => {
   describe('When we instantiate it', () => {
     const mockClothingItem = {
       name: 'NameTest',
-      clothingItemFrontImg: { publicId: '1' },
+      clothingItemFrontImg: { publicId: 'front-image-id' },
+      clothingItemBackImg: {
+        publicId: 'back-image-id',
+      },
     } as unknown as ClothingItem;
     render(
       <BrowserRouter>
@@ -35,10 +38,16 @@ describe('Given Card component', () => {
     test('Then it should call handleDetailsPage', async () => {
       let element = screen.getByTestId('details');
       expect(element).toBeInTheDocument();
+      userEvent.hover(element);
+      userEvent.unhover(element);
       await userEvent.click(element);
       element = screen.getByTestId('details2');
+      userEvent.hover(element);
+      userEvent.unhover(element);
       await userEvent.click(element);
       element = screen.getByTestId('details3');
+      userEvent.hover(element);
+      userEvent.unhover(element);
       await userEvent.click(element);
     });
   });
