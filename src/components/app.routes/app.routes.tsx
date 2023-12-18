@@ -12,6 +12,7 @@ const CreateClothingItem = lazy(
 const UpdateClothingItem = lazy(
   () => import('../../pages/update.clothingItem/update.clothingItem')
 );
+const ErrorComponent = lazy(() => import('../../pages/error/error'));
 
 export function AppRoutes() {
   return (
@@ -19,6 +20,7 @@ export function AppRoutes() {
       <Suspense>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
+          <Route path="*" element={<ErrorComponent></ErrorComponent>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
