@@ -12,7 +12,6 @@ export function Footer() {
           >
             <p>CONÓCENOS</p>
           </Link>
-          <p>GUÍA DE TALLAS</p>
         </div>
         <div className="footer-icons-container">
           <div className="vinted-icon-container">
