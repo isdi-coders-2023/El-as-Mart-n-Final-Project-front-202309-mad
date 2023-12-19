@@ -1,0 +1,12 @@
+@import '../../vars.scss';
+
+.not-implemented-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 2.8rem;
+  p {
+    font-family: $contrail-one-font;
+    text-align: center;
+  }
+}

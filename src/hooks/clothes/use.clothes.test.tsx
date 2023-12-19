@@ -1,14 +1,20 @@
 import { useClothes } from './use.clothes';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import { Provider, useDispatch } from 'react-redux';
-import { appStore } from '../../store/store';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { RootState, appStore } from '../../store/store';
 import { ClothingItem } from '../../entities/clothingItem';
 import { SyntheticEvent } from 'react';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn().mockReturnValue(jest.fn()),
+  useSelector: jest
+    .fn()
+    .mockReturnValue((state: RootState) => state.clothesState)
+    .mockReturnValue({
+      selectedValue: '',
+    }),
 }));
 
 const mockClothingItem = {} as ClothingItem;
@@ -79,5 +85,45 @@ describe('Given useClothes Hook', () => {
       await userEvent.click(elements[5]);
       expect(useDispatch()).toHaveBeenCalled();
     });
+  });
+});
+
+describe('Given loadClothes', () => {
+  jest.mock('react-redux', () => ({
+    ...jest.requireActual('react-redux'),
+    useDispatch: jest.fn().mockReturnValue(jest.fn()),
+    useSelector: jest
+      .fn()
+      .mockReturnValue((state: RootState) => state.clothesState)
+      .mockReturnValue({
+        selectedValue: 'test',
+      }),
+  }));
+  const TestComponent = () => {
+    const { loadClothes } = useClothes();
+    return (
+      <>
+        <button onClick={() => loadClothes()}></button>
+      </>
+    );
+  };
+  let elements: HTMLElement[];
+  beforeEach(() => {
+    render(
+      <Provider store={appStore}>
+        <TestComponent></TestComponent>
+      </Provider>
+    );
+    elements = screen.getAllByRole('button');
+  });
+  test('Then the dispatch should have been called with filterClothesThunk', async () => {
+    (useSelector as jest.Mock).mockImplementation((selector) =>
+      selector({
+        usersState: { token: 'mockToken' },
+        clothesState: { clothes: [], selectedValue: 'test' },
+      })
+    );
+    await userEvent.click(elements[0]);
+    expect(useDispatch()).toHaveBeenCalled();
   });
 });

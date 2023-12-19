@@ -25,5 +25,6 @@ export default {
     'src/pages/update.clothingItem/update.clothingItem.tsx',
     'src/pages/error/error.tsx',
     'src/pages/about.us/about.us.tsx',
+    'src/pages/not.implemented/not.implemented.tsx',
   ],
 };

@@ -194,4 +194,28 @@ describe('Given AppRoutes component', () => {
       expect(element).toBeInTheDocument();
     });
   });
+  describe('When we navigate to Not Implemented page', () => {
+    const MockedNotImplementedComponent = jest
+      .fn()
+      .mockReturnValue(<h1>Not Implemented</h1>);
+    jest.mock(
+      '../../pages/not.implemented/not.implemented',
+      () => MockedNotImplementedComponent
+    );
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/notImplemented']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Not Implemented');
+    });
+    test('Then the Not Implemented component should been called', () => {
+      expect(MockedNotImplementedComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
 });

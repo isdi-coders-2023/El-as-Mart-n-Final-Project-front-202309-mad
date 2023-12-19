@@ -13,7 +13,12 @@ export function AdminPanel() {
         >
           <button>AÑADIR PRENDA</button>
         </Link>
-        <button>CARRITO DE COMPRA</button>
+        <Link
+          to={'/notImplemented/'}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <button>CARRITO DE COMPRA</button>
+        </Link>
       </div>
     </div>
   );

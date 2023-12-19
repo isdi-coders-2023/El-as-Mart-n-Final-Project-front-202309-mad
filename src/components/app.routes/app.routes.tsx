@@ -14,6 +14,9 @@ const UpdateClothingItem = lazy(
 );
 const ErrorComponent = lazy(() => import('../../pages/error/error'));
 const AboutUs = lazy(() => import('../../pages/about.us/about.us'));
+const NotImplemented = lazy(
+  () => import('../../pages/not.implemented/not.implemented')
+);
 
 export function AppRoutes() {
   return (
@@ -36,6 +39,10 @@ export function AppRoutes() {
             element={<UpdateClothingItem></UpdateClothingItem>}
           ></Route>
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
+          <Route
+            path="/notImplemented"
+            element={<NotImplemented></NotImplemented>}
+          ></Route>
         </Routes>
       </Suspense>
     </main>

@@ -151,17 +151,22 @@ export function Details() {
             </p>
           </div>
           {(!loggedUser || (loggedUser && loggedUser.role === 'User')) && (
-            <div className="details-shopping-cart-container">
-              <div className="shopping-cart-text">
-                <p>AGREGAR AL CARRITO</p>
+            <Link
+              to={'/notImplemented/'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="details-shopping-cart-container">
+                <div className="shopping-cart-text">
+                  <p>AGREGAR AL CARRITO</p>
+                </div>
+                <div className="shopping-cart-icon">
+                  <img
+                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.png"
+                    alt="Icono de carrito de compra"
+                  />
+                </div>
               </div>
-              <div className="shopping-cart-icon">
-                <img
-                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.png"
-                  alt="Icono de carrito de compra"
-                />
-              </div>
-            </div>
+            </Link>
           )}
           {loggedUser && loggedUser!.role === 'Admin' && (
             <div className="admin-buttons">
