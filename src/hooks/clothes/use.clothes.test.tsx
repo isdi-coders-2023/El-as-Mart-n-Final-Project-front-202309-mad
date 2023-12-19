@@ -103,7 +103,7 @@ describe('Given useClothes Hook', () => {
   });
 });
 
-describe('Given...', () => {
+describe('Given loadClothes', () => {
   jest.mock('react-redux', () => ({
     ...jest.requireActual('react-redux'),
     useDispatch: jest.fn().mockReturnValue(jest.fn()),
@@ -114,19 +114,17 @@ describe('Given...', () => {
         selectedValue: 'test',
       }),
   }));
-  describe('Given loadClothes', () => {
-    const TestComponent = () => {
-      const { loadClothes } = useClothes();
-      return <button onClick={() => loadClothes()}></button>;
-    };
-    let elementss: HTMLElement[];
-    beforeEach(() => {
-      render(<TestComponent></TestComponent>);
-      elementss = screen.getAllByRole('button');
-    });
-    test('Then the dispatch should have been called with filterClothesThunk', async () => {
-      await userEvent.click(elementss[0]);
-      expect(useDispatch).toHaveBeenCalled();
-    });
+  const TestComponent = () => {
+    const { loadClothes } = useClothes();
+    return <button onClick={() => loadClothes()}></button>;
+  };
+  let elementss: HTMLElement[];
+  beforeEach(() => {
+    render(<TestComponent></TestComponent>);
+    elementss = screen.getAllByRole('button');
+  });
+  test('Then the dispatch should have been called with filterClothesThunk', async () => {
+    await userEvent.click(elementss[0]);
+    expect(useDispatch).toHaveBeenCalled();
   });
 });

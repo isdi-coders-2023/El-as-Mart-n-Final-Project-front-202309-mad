@@ -40,7 +40,7 @@ describe('Given usersReducer', () => {
 
   test('Then the new state will be returned ', () => {
     const action = {
-      type: 'loginWithToken/fulfilled', //  Este nombre es así porque es asincrona (nombre del thunk más el estado que toque.)
+      type: 'loginWithToken/fulfilled',
       payload: { user: 'test user', token: 'token' },
     };
     const state: UsersState = {} as UsersState;

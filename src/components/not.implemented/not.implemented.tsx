@@ -5,7 +5,7 @@ export function NotImplemented() {
     <div className="not-implemented-container">
       <div>
         <p>Estamos trabajando en la funcionalidad del carrito.</p>
-        <p>Disculpen las molestias</p>
+        <p>Disculpen las molestias.</p>
       </div>
       <div>
         <img

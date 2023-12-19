@@ -15,8 +15,6 @@ import {
   setSelectedValue,
 } from '../../slices/clothes/clothes.slice.tsx';
 
-// AÑADIR ESTRUCTURA TRY CATCH A A TODOS LOS MÉTODOS DEL CUSTOM HOOK
-
 export function useClothes() {
   const dispatch = useDispatch<AppDispatch>();
   const { currentClothingItem, clothes, filteredClothes, selectedValue } =
