@@ -22,5 +22,9 @@ export default {
     'src/pages/details/details.tsx',
     'src/pages/home/home.tsx',
     'src/pages/create.clothingItem/create.clothingItem.tsx',
+    'src/pages/update.clothingItem/update.clothingItem.tsx',
+    'src/pages/error/error.tsx',
+    'src/pages/about.us/about.us.tsx',
+    'src/pages/not.implemented/not.implemented.tsx',
   ],
 };

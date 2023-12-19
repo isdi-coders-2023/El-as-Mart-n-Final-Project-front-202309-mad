@@ -24,16 +24,51 @@
     input[type='file'] {
       display: none;
     }
-    .custom-file-upload {
+    .custom-front-file-upload {
+      text-align: center;
       margin: 0.5rem 0.5rem;
+      width: 21.875rem;
+      height: 2.688rem;
       background-color: white;
       font-family: $contrail-one-font;
       font-size: small;
       border: 1px solid #000000;
-      display: inline-block;
-      padding: 0.75rem 8.3701rem;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem 7.504rem;
       color: #79808b;
+      padding-inline: 0rem;
+      gap: 2rem;
       cursor: pointer;
+      .file-front-input-text {
+        width: 6.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .custom-back-file-upload {
+      text-align: center;
+      margin: 0.5rem 0.5rem;
+      width: 21.875rem;
+      height: 2.688rem;
+      background-color: white;
+      font-family: $contrail-one-font;
+      font-size: small;
+      border: 1px solid #000000;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem 7.504rem;
+      color: #79808b;
+      padding-inline: 0rem;
+      gap: 2rem;
+      cursor: pointer;
+      .file-back-input-text {
+        width: 6.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
   .create-buttons-container {
@@ -48,6 +83,9 @@
       display: inline-block;
       border: 0.063rem solid #000000;
       cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.8;
     }
     p {
       font-family: $contrail-one-font;

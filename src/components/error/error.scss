@@ -1,0 +1,12 @@
+@import '../../vars.scss';
+
+.error-container {
+  p {
+    font-family: $inter-font;
+    font-size: 1.4rem;
+  }
+  margin-block-start: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -9,6 +9,14 @@ const Details = lazy(() => import('../../pages/details/details'));
 const CreateClothingItem = lazy(
   () => import('../../pages/create.clothingItem/create.clothingItem')
 );
+const UpdateClothingItem = lazy(
+  () => import('../../pages/update.clothingItem/update.clothingItem')
+);
+const ErrorComponent = lazy(() => import('../../pages/error/error'));
+const AboutUs = lazy(() => import('../../pages/about.us/about.us'));
+const NotImplemented = lazy(
+  () => import('../../pages/not.implemented/not.implemented')
+);
 
 export function AppRoutes() {
   return (
@@ -16,6 +24,7 @@ export function AppRoutes() {
       <Suspense>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
+          <Route path="*" element={<ErrorComponent></ErrorComponent>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
@@ -24,6 +33,15 @@ export function AppRoutes() {
           <Route
             path="/create"
             element={<CreateClothingItem></CreateClothingItem>}
+          ></Route>
+          <Route
+            path="/update"
+            element={<UpdateClothingItem></UpdateClothingItem>}
+          ></Route>
+          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
+          <Route
+            path="/notImplemented"
+            element={<NotImplemented></NotImplemented>}
           ></Route>
         </Routes>
       </Suspense>

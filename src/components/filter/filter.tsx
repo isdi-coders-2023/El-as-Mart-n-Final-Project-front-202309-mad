@@ -1,9 +1,12 @@
+import { useClothes } from '../../hooks/clothes/use.clothes';
 import './filter.scss';
 
 export function Filter() {
+  const { handleFilter } = useClothes();
+
   return (
     <div className="size-filter-container">
-      <select name="size-filter">
+      <select onChange={handleFilter} name="size-filter">
         <option value="">Selecciona una talla</option>
         <option value="S">S</option>
         <option value="M">M</option>

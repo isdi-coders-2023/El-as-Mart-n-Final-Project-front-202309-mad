@@ -13,6 +13,10 @@ jest.mock('../../hooks/users/use.users', () => ({
   }),
 }));
 
+jest.mock('sweetalert2', () => ({
+  fire: jest.fn().mockResolvedValue({}),
+}));
+
 describe('Given Register Component', () => {
   beforeEach(() => {
     render(
@@ -31,6 +35,17 @@ describe('Given Register Component', () => {
       await userEvent.type(input[0], 'test@example.com');
       await fireEvent.submit(form);
       expect(useUsers().register).toHaveBeenCalled();
+    });
+    test('Then it updates the selectedFileName state', async () => {
+      const fileInput = screen.getByTestId('file-input');
+      expect(fileInput).toBeInTheDocument();
+      const fileName = 'test-file.png';
+      await userEvent.upload(
+        fileInput,
+        new File(['(⌐□_□)'], fileName, { type: 'image.png' })
+      );
+      const selectedFileName = screen.getByText(fileName);
+      expect(selectedFileName).toBeInTheDocument();
     });
   });
 });

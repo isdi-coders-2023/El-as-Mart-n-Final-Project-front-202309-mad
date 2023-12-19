@@ -130,4 +130,92 @@ describe('Given AppRoutes component', () => {
       expect(element).toBeInTheDocument();
     });
   });
+  describe('When we navigate to update page', () => {
+    const MockedUpdateClothingItemComponent = jest
+      .fn()
+      .mockReturnValue(<h1>Editar Prenda</h1>);
+    jest.mock(
+      '../../pages/update.clothingItem/update.clothingItem',
+      () => MockedUpdateClothingItemComponent
+    );
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/update']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Editar Prenda');
+    });
+    test('Then the UpdateClothingItem component should been called', () => {
+      expect(MockedUpdateClothingItemComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
+  describe('When we navigate to About Us page', () => {
+    const MockedAboutUsComponent = jest
+      .fn()
+      .mockReturnValue(<h1>Conócenos</h1>);
+    jest.mock('../../pages/about.us/about.us', () => MockedAboutUsComponent);
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/aboutUs']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Conócenos');
+    });
+    test('Then the AbputUs component should been called', () => {
+      expect(MockedAboutUsComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
+  describe('When we navigate to Error page', () => {
+    const MockedErrorComponent = jest.fn().mockReturnValue(<h1>Error</h1>);
+    jest.mock('../../pages/error/error', () => MockedErrorComponent);
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/*']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Error');
+    });
+    test('Then the Error component should been called', () => {
+      expect(MockedErrorComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
+  describe('When we navigate to Not Implemented page', () => {
+    const MockedNotImplementedComponent = jest
+      .fn()
+      .mockReturnValue(<h1>Not Implemented</h1>);
+    jest.mock(
+      '../../pages/not.implemented/not.implemented',
+      () => MockedNotImplementedComponent
+    );
+    let element: HTMLElement;
+    beforeEach(async () => {
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/notImplemented']} initialIndex={0}>
+            <AppRoutes></AppRoutes>
+          </MemoryRouter>
+        );
+      });
+      element = screen.getByText('Not Implemented');
+    });
+    test('Then the Not Implemented component should been called', () => {
+      expect(MockedNotImplementedComponent).toHaveBeenCalled();
+      expect(element).toBeInTheDocument();
+    });
+  });
 });

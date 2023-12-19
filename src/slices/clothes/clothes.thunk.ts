@@ -22,3 +22,41 @@ export const createClothingItemThunk = createAsyncThunk<ClothingItem, Params>(
     return finalClothingItem;
   }
 );
+
+export const updateClothingItemThunk = createAsyncThunk<
+  ClothingItem,
+  {
+    repo: ClothesRepo;
+    id: ClothingItem['id'];
+    updateClothingItem: FormData;
+  }
+>('update', async ({ repo, id, updateClothingItem }) => {
+  const finalClothingItem = await repo.updateClothingItem(
+    id,
+    updateClothingItem
+  );
+  return finalClothingItem;
+});
+
+export const deleteClothingItemThunk = createAsyncThunk<
+  ClothingItem['id'],
+  {
+    repo: ClothesRepo;
+    id: ClothingItem['id'];
+  }
+>('delete', async ({ repo, id }) => {
+  await repo.deleteClothingItem(id);
+  return id;
+});
+
+export const filterClothesThunk = createAsyncThunk(
+  'filter',
+  async ({ repo, query }: { repo: ClothesRepo; query: string }) => {
+    const allClothes = await repo.filterClothes(query);
+    if (query === '') {
+      return allClothes;
+    } else {
+      return allClothes.filter((clothingItem) => clothingItem.size === query);
+    }
+  }
+);

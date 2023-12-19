@@ -1,0 +1,70 @@
+@import '../../vars.scss';
+
+.about-us-container {
+  font-family: $contrail-one-font;
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-block-start: 2.2rem;
+    margin-block-end: 1.4rem;
+  }
+  .mobile-container {
+    .section1-and-image1-container {
+      display: flex;
+      justify-content: center;
+      .text-section-1 {
+        width: 180px;
+        margin-inline-start: 1.4rem;
+        margin-inline-end: 1rem;
+        p {
+          margin: 0;
+        }
+      }
+      .img-1-container {
+        margin-inline-end: 1.4rem;
+      }
+    }
+    .text-section-3 {
+      margin-block-start: 1rem;
+      margin-inline-start: 1.4rem;
+    }
+    .text-section-4 {
+      margin-block-start: 1rem;
+      margin-inline-start: 1.4rem;
+    }
+    .img-2-container {
+      display: flex;
+      justify-content: center;
+      margin-block: 1rem;
+    }
+    .text-section-5 {
+      margin-inline-start: 1.4rem;
+      margin-block-end: 1rem;
+    }
+    .text-section-6 {
+      margin-inline-start: 1.4rem;
+      margin-block-end: 1rem;
+    }
+  }
+  .desktop-container {
+    display: none;
+  }
+}
+
+@media (min-width: 750px) {
+  .about-us-container {
+    .mobile-container {
+      display: none;
+    }
+    .desktop-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 1.4rem;
+      gap: 1rem;
+      .desktop-text {
+        width: 19rem;
+      }
+    }
+  }
+}

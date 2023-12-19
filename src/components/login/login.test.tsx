@@ -13,6 +13,10 @@ jest.mock('../../hooks/users/use.users', () => ({
   }),
 }));
 
+jest.mock('sweetalert2', () => ({
+  fire: jest.fn().mockResolvedValue({}),
+}));
+
 describe('Given Login Component', () => {
   beforeEach(() => {
     render(
@@ -32,6 +36,10 @@ describe('Given Login Component', () => {
       await userEvent.click(screen.getByText('INGRESAR CUENTA'));
       await fireEvent.submit(form);
       expect(useUsers().login).toHaveBeenCalled();
+    });
+    test('Then the show passwd should change the input type', async () => {
+      const showPasswdButton = screen.getByTestId('show-passwd-button');
+      await userEvent.click(showPasswdButton);
     });
   });
 });
