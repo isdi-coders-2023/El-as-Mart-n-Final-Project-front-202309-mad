@@ -101,11 +101,7 @@ describe('Given loadClothes', () => {
   }));
   const TestComponent = () => {
     const { loadClothes } = useClothes();
-    return (
-      <>
-        <button onClick={() => loadClothes()}></button>
-      </>
-    );
+    return <button onClick={() => loadClothes()}></button>;
   };
   let elements: HTMLElement[];
   beforeEach(() => {
