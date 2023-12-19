@@ -6,7 +6,7 @@ import { loginThunk, loginTokenThunk } from './users.thunk';
 type LoginState = 'idle' | 'logging' | 'error';
 
 export type UsersState = {
-  loggedUser: User | null; // Sería currentUser
+  loggedUser: User | null;
   loginLoadState: LoginState;
   token: string;
 };

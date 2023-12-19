@@ -15,8 +15,6 @@ import {
   setSelectedValue,
 } from '../../slices/clothes/clothes.slice.tsx';
 
-// AÑADIR ESTRUCTURA TRY CATCH A A TODOS LOS MÉTODOS DEL CUSTOM HOOK
-
 export function useClothes() {
   const dispatch = useDispatch<AppDispatch>();
   const { currentClothingItem, clothes, filteredClothes, selectedValue } =
@@ -26,10 +24,14 @@ export function useClothes() {
   const repo = useMemo(() => new ClothesRepo(token), []);
 
   const loadClothes = useCallback(async () => {
-    if (selectedValue === '') {
-      dispatch(loadClothesThunk(repo));
-    } else {
-      dispatch(filterClothesThunk({ repo, query: selectedValue }));
+    try {
+      if (selectedValue === '') {
+        dispatch(loadClothesThunk(repo));
+      } else {
+        dispatch(filterClothesThunk({ repo, query: selectedValue }));
+      }
+    } catch (error) {
+      // console.log((error as Error).message);
     }
   }, [repo, selectedValue]);
 

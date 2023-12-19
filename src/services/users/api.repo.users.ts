@@ -5,7 +5,6 @@ import { LoginResponse } from '../../types/login.response';
 export class UsersRepo {
   apiUrl = serverUrl + '/users';
 
-  // Creo que no es necesario ponerla
   async getUsers(): Promise<User[]> {
     const response = await fetch(this.apiUrl);
     if (!response.ok)

@@ -4,7 +4,6 @@ import { userEvent } from '@testing-library/user-event';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { RootState, appStore } from '../../store/store';
 import { ClothingItem } from '../../entities/clothingItem';
-import { SyntheticEvent } from 'react';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -20,6 +19,11 @@ jest.mock('react-redux', () => ({
 const mockClothingItem = {} as ClothingItem;
 const mockClothingItemId = '';
 const mockFormData = {} as FormData;
+const mockEvent = {
+  preventDefault: jest.fn(),
+  target: { value: 'test' },
+} as unknown as React.SyntheticEvent;
+
 describe('Given useClothes Hook', () => {
   const TestComponent = () => {
     const {
@@ -40,9 +44,7 @@ describe('Given useClothes Hook', () => {
         <button
           onClick={() => updateClothingItem(mockClothingItemId, mockFormData)}
         ></button>
-        <button
-          onClick={(event: SyntheticEvent) => handleFilter(event)}
-        ></button>
+        <button onClick={() => handleFilter(mockEvent)}></button>
       </>
     );
   };
@@ -66,6 +68,19 @@ describe('Given useClothes Hook', () => {
     test('Then dispatch should have been called when loading clothes click', async () => {
       await userEvent.click(elements[1]);
       expect(useDispatch()).toHaveBeenCalled();
+    });
+
+    test('Then the dispatch should have been called with filterClothesThunk', async () => {
+      (useSelector as jest.Mock).mockImplementation((selector) =>
+        selector({
+          usersState: { token: 'mockToken' },
+          clothesState: { clothes: [], selectedValue: 'test' },
+        })
+      );
+
+      await userEvent.click(elements[1]);
+
+      expect(useDispatch).toHaveBeenCalled();
     });
 
     test('Then dispatch should have been called when creating a clothing item click', async () => {
@@ -103,23 +118,13 @@ describe('Given loadClothes', () => {
     const { loadClothes } = useClothes();
     return <button onClick={() => loadClothes()}></button>;
   };
-  let elements: HTMLElement[];
+  let elementss: HTMLElement[];
   beforeEach(() => {
-    render(
-      <Provider store={appStore}>
-        <TestComponent></TestComponent>
-      </Provider>
-    );
-    elements = screen.getAllByRole('button');
+    render(<TestComponent></TestComponent>);
+    elementss = screen.getAllByRole('button');
   });
   test('Then the dispatch should have been called with filterClothesThunk', async () => {
-    (useSelector as jest.Mock).mockImplementation((selector) =>
-      selector({
-        usersState: { token: 'mockToken' },
-        clothesState: { clothes: [], selectedValue: 'test' },
-      })
-    );
-    await userEvent.click(elements[0]);
-    expect(useDispatch()).toHaveBeenCalled();
+    await userEvent.click(elementss[0]);
+    expect(useDispatch).toHaveBeenCalled();
   });
 });

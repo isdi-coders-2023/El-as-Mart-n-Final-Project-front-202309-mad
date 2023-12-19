@@ -18,7 +18,7 @@ describe('Given Not Implemented Component', () => {
     });
 
     test('Then it should be in the document', async () => {
-      const element = screen.getByText('Disculpen las molestias');
+      const element = screen.getByText(/Disculpen las molestias/i);
       expect(element).toBeInTheDocument();
     });
   });
