@@ -17,7 +17,7 @@ export function Footer() {
           <div className="vinted-icon-container">
             <Link to={'https://www.vinted.es/member/53837553-elperrovintage'}>
               <img
-                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897774/elPerroVintage/boerxgp1md4uxikfxdc2.png"
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897774/elPerroVintage/boerxgp1md4uxikfxdc2.webp"
                 alt="Vinted icon"
               />
             </Link>
@@ -25,7 +25,7 @@ export function Footer() {
           <div className="instagram-icon-container">
             <Link to={'https://www.instagram.com/elperrovintage/'}>
               <img
-                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897764/elPerroVintage/kpnygadf5ppdrgzzd1by.png"
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702897764/elPerroVintage/kpnygadf5ppdrgzzd1by.webp"
                 alt="Instagram icon"
               />
             </Link>

@@ -14,7 +14,7 @@ export function UserButtons() {
       {!loggedUser && (
         <Link to={'/login/'}>
           <img
-            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_50/v1701377671/elPerroVintage/nhlvlecz0fg1x7i0qtxy.png"
+            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_50/v1701377671/elPerroVintage/nhlvlecz0fg1x7i0qtxy.webp"
             alt="User login logo"
           />
         </Link>

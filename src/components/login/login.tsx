@@ -61,7 +61,7 @@ export function Login() {
               data-testid="show-passwd-button"
             >
               <img
-                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702833376/elPerroVintage/esgdaubs95zfrm1ijyrj.png"
+                src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_30/v1702833376/elPerroVintage/esgdaubs95zfrm1ijyrj.webp"
                 alt=""
               />
             </button>

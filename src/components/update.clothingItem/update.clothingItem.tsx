@@ -141,7 +141,7 @@ export function UpdateClothingItem() {
               <div className="select-upload-front-text">Imagen frontal</div>
               <div>
                 <img
-                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
+                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.webp"
                   alt="Upload icon"
                 />
               </div>
@@ -163,7 +163,7 @@ export function UpdateClothingItem() {
               <div className="select-upload-back-text">Imagen trasera</div>
               <div>
                 <img
-                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.png"
+                  src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_20/v1702829281/elPerroVintage/yikoxrp1eochrde68y7h.webp"
                   alt="Upload icon"
                 />
               </div>
