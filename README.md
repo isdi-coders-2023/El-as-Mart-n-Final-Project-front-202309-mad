@@ -37,7 +37,7 @@ El Perro Vintage es un proyecto desarrollado como parte del bootcamp ISDI Coders
   - Node (Backend)
 
 - **Pruebas:**
-  - La aplicación está completamente testada con Jest.
+  - Todas las funcionalidades están 100% testeadas con Jest.
 
 ## Instrucciones de Ejecución
 
@@ -50,38 +50,34 @@ Antes de ejecutar el backend de la aplicación, asegúrese de tener instaladas l
 
 1. Clone el repositorio:
 
-  ```bash
-  git clone https://github.com/isdi-coders-2023/Elias-Martin-Final-Project-front-202309-mad
-  ```
+```bash
+git clone https://github.com/isdi-coders-2023/Elias-Martin-Final-Project-front-202309-mad
+```
 
 2. Navegue al directorio del proyecto:
 
-  ```bash
-  cd Elias-Martin-Final-Project-front-202309-mad
-  ```
+```bash
+cd Elias-Martin-Final-Project-front-202309-mad
+```
 
 3. Instale las dependencias:
 
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 
 4. Configure las variables de entorno:
 
-  - Cree un archivo `.env` en el directorio raíz del proyecto.
-  - Configure las variables de entorno necesarias. Consulte el archivo `.env.sample` para obtener una lista de las variables requeridas.
+- Cree un archivo `.env` en el directorio raíz del proyecto.
+- Configure las variables de entorno necesarias. Consulte el archivo `.env.sample` para obtener una lista de las variables requeridas.
 
 5. Inicie el servidor:
 
-  ```bash
-  npm run dev
-  ```
+```bash
+npm run dev
+```
 
 Con estos pasos, el backend estará configurado y en ejecución. Ahora puede proceder a iniciar el frontend y explorar El Perro Vintage.
-
-## Pruebas
-
-- Todas las funcionalidades están 100% testeadas con Jest.
 
 ## Contribución
 
@@ -89,37 +85,36 @@ Con estos pasos, el backend estará configurado y en ejecución. Ahora puede pro
 
 1. **Fork del Repositorio:**
 
-  - Crea un fork del repositorio desde la interfaz de GitHub.
+- Crea un fork del repositorio desde la interfaz de GitHub.
 
 2. **Clona tu Repositorio Fork:**
 
-  - Clona tu fork del repositorio a tu máquina local usando el comando:
+- Clona tu fork del repositorio a tu máquina local usando el comando:
 
-    ```bash
-    git clone https://github.com/TuUsuario/Elias-Martin-Final-Project-front-202309-mad.git
-    ```
+  ```bash
+  git clone https://github.com/TuUsuario/Elias-Martin-Final-Project-front-202309-mad.git
+  ```
 
 3. **Realiza tus Cambios:**
 
-  - Implementa las mejoras o correcciones en tu copia local del proyecto.
+- Implementa las mejoras o correcciones en tu copia local del proyecto.
 
 4. **Commit y Push:**
 
-  - Realiza commits de tus cambios con mensajes descriptivos.
-  - Sube tus cambios a tu repositorio en GitHub:
+- Realiza commits de tus cambios con mensajes descriptivos.
+- Sube tus cambios a tu repositorio en GitHub:
 
-    ```bash
-    git push origin master
-    ```
+  ```bash
+  git push origin master
+  ```
 
 5. **Envía un Pull Request:**
-  - Desde la página de tu fork en GitHub, crea un Pull Request (PR).
-  - Asegúrate de proporcionar detalles claros sobre los cambios realizados y las razones para realizarlos.
 
-¡Estamos ansiosos por revisar y fusionar tus contribuciones!
+- Desde la página de tu fork en GitHub, crea un Pull Request (PR).
+- Asegúrate de proporcionar detalles claros sobre los cambios realizados y las razones para realizarlos.
 
 ## Autor
 
-- [Elías Martin (eliasmr98)]
+- Elías Martin (eliasmr98)
 
 ¡Gracias por revisar El Perro Vintage! 🐾
