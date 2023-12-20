@@ -161,7 +161,7 @@ export function Details() {
                 </div>
                 <div className="shopping-cart-icon">
                   <img
-                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.png"
+                    src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_36/v1702369496/elPerroVintage/gutb4gkaockkcrxq1rw3.webp"
                     alt="Icono de carrito de compra"
                   />
                 </div>

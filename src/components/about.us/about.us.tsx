@@ -17,7 +17,7 @@ export function AboutUs() {
           </div>
           <div className="img-1-container">
             <img
-              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_320/v1702907564/elPerroVintage/gnczwifurmevn8ulsyom.png"
+              src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_320/v1702907564/elPerroVintage/gnczwifurmevn8ulsyom.webp"
               alt="La gente guapa del Perro Vintage"
             />
           </div>
@@ -35,7 +35,7 @@ export function AboutUs() {
         </div>
         <div className="img-2-container">
           <img
-            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_220/v1702910444/elPerroVintage/nkvdcn3omttyvsfqn1yj.png"
+            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_220/v1702910444/elPerroVintage/nkvdcn3omttyvsfqn1yj.webp"
             alt="Fuck Fast Fashion"
           />
         </div>
@@ -89,7 +89,7 @@ export function AboutUs() {
         </div>
         <div className="desktop-image">
           <img
-            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_620/v1702907564/elPerroVintage/gnczwifurmevn8ulsyom.png"
+            src="https://res.cloudinary.com/djz7c5bdp/image/upload/h_620/v1702907564/elPerroVintage/gnczwifurmevn8ulsyom.webp"
             alt="La gente guapa del Perro Vintage (foto grande)"
           />
         </div>
