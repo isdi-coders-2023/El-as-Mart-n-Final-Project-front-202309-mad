@@ -46,7 +46,7 @@ Antes de ejecutar el backend de la aplicación, asegúrese de tener instaladas l
 - **Node.js:** Descargar e instalar [Node.js](https://nodejs.org/).
 - **MongoDB:** Descargar e instalar [MongoDB](https://www.mongodb.com/try/download/community).
 
-### Configuración del Backend:
+### Configuración del Frontend:
 
 1. Clone el repositorio:
 
@@ -66,18 +66,13 @@ cd Elias-Martin-Final-Project-front-202309-mad
 npm install
 ```
 
-4. Configure las variables de entorno:
-
-- Cree un archivo `.env` en el directorio raíz del proyecto.
-- Configure las variables de entorno necesarias. Consulte el archivo `sample.env` para obtener una lista de las variables requeridas.
-
-5. Inicie el servidor:
+4. Inicie el servidor:
 
 ```bash
 npm run dev
 ```
 
-Con estos pasos, el backend estará configurado y en ejecución. Ahora puede proceder a iniciar el frontend y explorar El Perro Vintage.
+Con estos pasos, el frontend estará configurado y en ejecución.
 
 ## Contribución
 
